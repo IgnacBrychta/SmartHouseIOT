@@ -1,0 +1,274 @@
+//{LIBFILE="LOCALLIB\STDLIB_V22_20180619.MLB"}
+(* Mosaic IDE library *)
+(* File name : C:\TecoLib\StdLib_V22_20180619.mlb *)
+(* Library : StdLib 2.2 *)
+(* Author : Teco a.s. *)
+(* Copyright : (c) 2006-2018 Teco a.s. *)
+(* IEC compiler version : 4.1.4.0 *)
+(* Assembler version : 4.3.00 *)
+
+//{Knihovna : StdLib 2.2  }
+(* History: *)
+(*
+v1.0 2004-06-30 Nem  First edition
+                     Blocks : R_TRIG, F_TRIG, SR, RS, TON, TOF, CTU, CTD, TP
+v1.1 2004-08-09	Nem  Function block TOF corrected
+v1.2 2004-09-06	Nem  New version of comments
+v1.3 2005-05-16	Nem  New code for restart of TON/TOF/TP in the case
+                     when timers are in retain area
+v1.4            Nem  not used
+v1.5 2005-11-01	Nem  Final version of hot restart TON/TOF/TP
+                     Function blocks R_TRIG, F_TRIG, SR a RS rewritten in asm
+v1.6 2005-11-07	Nem  Functions ADD_TIME, SUB_TIME, ADD_TOD_TIME,
+                     ADD_DT_TIME, SUB_DATE_DATE, SUB_TOD_TIME, SUB_TOD_TOD,
+                     SUB_DT_TIME, SUB_DT_DT a CONCAT_DATE_TOD added
+v1.7 2006-03-17	Nem  Mask for TON/TOF/PT repaired
+                     Function SUB_DT_DT repaired
+v1.8 2006-04-04	Nem  Comments of TON, .... cutted (it is better for FBD)
+v1.9 2008-09-29	Nem  Function block TOF completelly rewritten
+v2.0 2009-02-25	Nem  When preset of TP is zero than there is no output puls
+     2010-05-19	Nem  Czech comments added (Mosaic v2.0.23 and more)
+     2010-10-27 Nem  English history version added
+v2.1 2014-05-14	Nem  Rising edge of IN input is detected permanently
+v2.2 2018-06-19	Nem  Added function IS_INVALID_REAL
+*)
+
+(*----------------------------------------------------------------------------*)
+
+__DECL FUNCTION_BLOCK R_TRIG
+(*Rising Edge Detector*)
+  VAR_INPUT
+    CLK              : bool;
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;
+  END_VAR
+  VAR
+    M                : bool;
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK F_TRIG
+(*Falling Edge Detector*)
+  VAR_INPUT
+    CLK              : bool;
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;
+  END_VAR
+  VAR
+    M                : bool :=  TRUE;
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK SR
+(*Flip-Flop (Set Dominant)*)
+  VAR_INPUT
+    S1               : bool;
+    R                : bool;
+  END_VAR
+  VAR_OUTPUT
+    Q1               : bool;
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK RS
+(*Flip-Flop (Reset Dominant)*)
+  VAR_INPUT
+    S                : bool;
+    R1               : bool;
+  END_VAR
+  VAR_OUTPUT
+    Q1               : bool;
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK CTU
+(*Up Counter*)
+  VAR_INPUT
+    CU               : bool R_EDGE;  (*up*)
+    R                : bool;  (*reset*)
+    PV               : int;  (*preset*)
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;  (*output*)
+    CV               : int;  (*value*)
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK CTD
+(*Down Counter*)
+  VAR_INPUT
+    CD               : bool R_EDGE;  (*down*)
+    LD               : bool;  (*load*)
+    PV               : int;  (*preset*)
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;  (*output*)
+    CV               : int;  (*value*)
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK CTUD
+(*Up-Down Counter*)
+  VAR_INPUT
+    CU               : bool R_EDGE;  (*up*)
+    CD               : bool R_EDGE;  (*down*)
+    R                : bool;  (*reset*)
+    LD               : bool;  (*load*)
+    PV               : int;  (*preset*)
+  END_VAR
+  VAR_OUTPUT
+    QU               : bool;  (*up output*)
+    QD               : bool;  (*down output*)
+    CV               : int;  (*value*)
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK TON
+(*On-delay Timer*)
+  VAR_INPUT
+    IN               : bool;  (*input*)
+    PT               : time;  (*preset*)
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;  (*output*)
+    ET               : time;  (*value*)
+  END_VAR
+  VAR
+    IN_r_edge        : R_TRIG;
+    LT               : time;  (*last tick value ( 1ms resolution)*)
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK TOF
+(*Off-delay Timer*)
+  VAR_INPUT
+    IN               : bool;  (*input*)
+    PT               : time;  (*preset*)
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;  (*output*)
+    ET               : time;  (*value*)
+  END_VAR
+  VAR
+    IN_f_edge        : F_TRIG;
+    LT               : time;  (*last tick value ( 1ms resolution)*)
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION_BLOCK TP
+(*Pulse Timer*)
+  VAR_INPUT
+    IN               : bool;  (*input*)
+    PT               : time;  (*preset*)
+  END_VAR
+  VAR_OUTPUT
+    Q                : bool;  (*output*)
+    ET               : time;  (*value*)
+  END_VAR
+  VAR
+    IN_r_edge        : R_TRIG;
+    LT               : time;  (*last tick value ( 1ms resolution)*)
+  END_VAR
+END_FUNCTION_BLOCK
+
+__DECL FUNCTION IS_INVALID_REAL : bool
+(*Returns TRUE if the value of num is NaN, +INF or -INF*)
+  VAR_INPUT
+    num              : real;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION ADD_TIME : time
+(*------------------------------------------------------------------------------
+  TIME := TIME + TIME;*)
+  VAR_INPUT
+    IN1              : time;
+    IN2              : time;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION SUB_TIME : time
+(*------------------------------------------------------------------------------
+  TIME := TIME - TIME;*)
+  VAR_INPUT
+    IN1              : time;
+    IN2              : time;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION ADD_TOD_TIME : tod
+(*------------------------------------------------------------------------------
+  TIME_OF_DAY := TIME_OF_DAY + TIME;*)
+  VAR_INPUT
+    IN1              : tod;
+    IN2              : time;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION ADD_DT_TIME : dt
+(*------------------------------------------------------------------------------
+  DATE_AND_TIME := DATE_AND_TIME + TIME;*)
+  VAR_INPUT
+    IN1              : dt;
+    IN2              : time;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION SUB_DATE_DATE : time
+(*------------------------------------------------------------------------------
+  TIME := DATE - DATE;*)
+  VAR_INPUT
+    IN1              : date;
+    IN2              : date;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION SUB_TOD_TIME : tod
+(*------------------------------------------------------------------------------
+  TIME_OF_DAY := TIME_OF_DAY - TIME;*)
+  VAR_INPUT
+    IN1              : tod;
+    IN2              : time;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION SUB_TOD_TOD : time
+(*------------------------------------------------------------------------------
+  TIME := TIME_OF_DAY - TIME_OF_DAY;*)
+  VAR_INPUT
+    IN1              : tod;
+    IN2              : tod;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION SUB_DT_TIME : dt
+(*------------------------------------------------------------------------------
+  DATE_AND_TIME := DATE_AND_TIME - TIME;*)
+  VAR_INPUT
+    IN1              : dt;
+    IN2              : time;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION SUB_DT_DT : time
+(*------------------------------------------------------------------------------
+  TIME := DATE_AND_TIME - DATE_AND_TIME;*)
+  VAR_INPUT
+    IN1              : dt;
+    IN2              : dt;
+  END_VAR
+END_FUNCTION
+
+__DECL FUNCTION CONCAT_DATE_TOD : dt
+(*------------------------------------------------------------------------------
+  DATE_AND_TIME := DATE + TIME_OF_DAY;*)
+  VAR_INPUT
+    IN1              : date;
+    IN2              : tod;
+  END_VAR
+END_FUNCTION
+
+
+

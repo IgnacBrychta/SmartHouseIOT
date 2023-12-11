@@ -1,0 +1,90 @@
+VAR_GLOBAL
+  //system
+  timePLC AT %s16 : INT;
+  timeDelayed : INT := 0;
+  switchCase : INT := 0;
+  // lights
+  bedroomLight : BOOL := FALSE;
+  childTopRoomLight : BOOL := FALSE;
+  garageLight : BOOL := FALSE;
+  childMiddleRoomLight : BOOL := FALSE;
+  bathroomLight : BOOL := FALSE;
+  hallLight : BOOL := FALSE;
+  wcLight : BOOL := FALSE;
+  kitchenLight : BOOL := FALSE;
+  patioLight : BOOL := FALSE;
+  livingRoomLight : BOOL := FALSE;
+  outsideLight : BOOL := FALSE;
+  cellarLight : BOOL := FALSE;
+  //sun
+  sun : BOOL := FALSE;
+  cycleSwitched : BOOL := FALSE;
+  // doors
+  bedroomDoor : BOOL := FALSE;
+  childTopRoomDoor : BOOL := FALSE;
+  childMiddleRoomDoor : BOOL := FALSE;
+  garageDoor : BOOL := FALSE;
+  garageGate : BOOL := FALSE;
+  bathroomDoor : BOOL := FALSE;
+  wcDoor : BOOL := FALSE;
+  cellarDoor : BOOL := FALSE;
+  patioDoor : BOOL := FALSE;
+  hallDoor : BOOL := FALSE;
+  // info text
+  insideTemperatureText : STRING := '';
+  outsideTemperatureText : STRING := '';
+  // master password
+  MASTER_PASSKEY : STRING := '1234';
+  // security
+  enteredPassKey : STRING := '';
+  canOpenOutsideDoors : BOOL := FALSE;
+  alarmON : BOOL := FALSE;
+  alarmBlink : BOOl := FALSE;
+  passKeyDefaultValue : STRING := '';
+  alarmTimerOFFsec : INT := 0;
+  defaultAlarmTimerOFFsec : INT := 5;
+  // temperature
+  insideTemperature : DINT := 10;
+  heating : BOOL := FALSE;
+  outsideTemperature : DINT := 15;
+  DESIRED_TEMPERATURE : DINT := 21;
+  cooling : BOOL := FALSE;
+  // master switches
+  masterLightSwitchON : BOOL := FALSE;
+  masterLightSwitchOFF : BOOL := FALSE;
+  // switches
+  bedroomLightSwitch : BOOL := FALSE;
+  childTopRoomLightSwitch : BOOL := FALSE;
+  garageLightSwitch : BOOL := FALSE;
+  childMiddleRoomLightSwitch : BOOL := FALSE;
+  bathroomLightSwitch : BOOL := FALSE;
+  hallLightSwitch : BOOL := FALSE;
+  wcLightSwitch : BOOL := FALSE;
+  kitchenLightSwitch : BOOL := FALSE;
+  patioLightSwitch : BOOL := FALSE;
+  livingRoomLightSwitch : BOOL := FALSE;
+  outsideLightSwitch : BOOL := FALSE;
+  cellarLightSwitch : BOOL := FALSE;
+  garageGateSwitch : BOOL := FALSE;
+  garageDoorSwitch : BOOL := FALSE;
+  frontDoorSwitch : BOOL := FALSE;
+  patioDoorSwitch : BOOL := FALSE;
+  // misc
+  secsInMin : INT := 6;
+  modTime : INT := 0;
+  modTemp : DINT := 0;
+  random : BOOL := FALSE;
+  canCallTemperatureChange : BOOL := FALSE;
+  textAllON : STRING := 'All ON';
+  textAllOFF : STRING := 'All OFF';
+  textOutsideLights : STRING := 'Outside lights';
+  textPassKey : STRING := 'PassKey:';
+  textLights : STRING := 'Lights Controller';
+  textSecuritySystem : STRING := 'Security Controller';
+  // PRNG
+  seed: DINT := 123;  // Initial seed value
+  a: DINT := 1664525; // Multiplier
+  c: DINT := 1013904223; // Increment
+  m: DINT := 2147483647; // Modulus (2^31)
+  randomValue: DINT;
+END_VAR

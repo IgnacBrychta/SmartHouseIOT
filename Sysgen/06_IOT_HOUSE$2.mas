@@ -1,0 +1,155 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\Sysgen\06_IOT_HOUSE.mlh'
+
+#defpou R_TRIG
+  bool CLK,
+  bool Q,
+  bool M
+
+
+#defpou F_TRIG
+  bool CLK,
+  bool Q,
+  bool M
+
+
+#defpou SR
+  bool S1,
+  bool R,
+  bool Q1
+
+
+#defpou RS
+  bool S,
+  bool R1,
+  bool Q1
+
+
+#defpou CTU
+  bool CU,  ;up
+  bool R,  ;reset
+  int PV,  ;preset
+  bool Q,  ;output
+  int CV,  ;value
+  bool __EDGE_R__CU
+
+
+#defpou CTD
+  bool CD,  ;down
+  bool LD,  ;load
+  int PV,  ;preset
+  bool Q,  ;output
+  int CV,  ;value
+  bool __EDGE_R__CD
+
+
+#defpou CTUD
+  bool CU,  ;up
+  bool CD,  ;down
+  bool R,  ;reset
+  bool LD,  ;load
+  int PV,  ;preset
+  bool QU,  ;up output
+  bool QD,  ;down output
+  int CV,  ;value
+  bool __EDGE_R__CU,
+  bool __EDGE_R__CD
+
+
+#defpou TON
+  bool IN,  ;input
+  time PT,  ;preset
+  bool Q,  ;output
+  time ET,  ;value
+  R_TRIG IN_r_edge,
+  time LT  ;last tick value ( 1ms resolution)
+
+
+#defpou TOF
+  bool IN,  ;input
+  time PT,  ;preset
+  bool Q,  ;output
+  time ET,  ;value
+  F_TRIG IN_f_edge,
+  time LT  ;last tick value ( 1ms resolution)
+
+
+#defpou TP
+  bool IN,  ;input
+  time PT,  ;preset
+  bool Q,  ;output
+  time ET,  ;value
+  R_TRIG IN_r_edge,
+  time LT  ;last tick value ( 1ms resolution)
+
+
+#defpou __LATENT_INSTANCE IS_INVALID_REAL
+  bool __fc__IS_INVALID_REAL,
+  real num
+
+
+#defpou __LATENT_INSTANCE ADD_TIME
+  time __fc__ADD_TIME,
+  time IN1,
+  time IN2
+
+
+#defpou __LATENT_INSTANCE SUB_TIME
+  time __fc__SUB_TIME,
+  time IN1,
+  time IN2
+
+
+#defpou __LATENT_INSTANCE ADD_TOD_TIME
+  time_of_day __fc__ADD_TOD_TIME,
+  time_of_day IN1,
+  time IN2
+
+
+#defpou __LATENT_INSTANCE ADD_DT_TIME
+  date_and_time __fc__ADD_DT_TIME,
+  date_and_time IN1,
+  time IN2
+
+
+#defpou __LATENT_INSTANCE SUB_DATE_DATE
+  time __fc__SUB_DATE_DATE,
+  date IN1,
+  date IN2
+
+
+#defpou __LATENT_INSTANCE SUB_TOD_TIME
+  time_of_day __fc__SUB_TOD_TIME,
+  time_of_day IN1,
+  time IN2
+
+
+#defpou __LATENT_INSTANCE SUB_TOD_TOD
+  time __fc__SUB_TOD_TOD,
+  time_of_day IN1,
+  time_of_day IN2
+
+
+#defpou __LATENT_INSTANCE SUB_DT_TIME
+  date_and_time __fc__SUB_DT_TIME,
+  date_and_time IN1,
+  time IN2
+
+
+#defpou __LATENT_INSTANCE SUB_DT_DT
+  time __fc__SUB_DT_DT,
+  date_and_time IN1,
+  date_and_time IN2
+
+
+#defpou __LATENT_INSTANCE CONCAT_DATE_TOD
+  date_and_time __fc__CONCAT_DATE_TOD,
+  date IN1,
+  time_of_day IN2
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\Sysgen\06_IOT_HOUSE.mlh'
+
+
+ 
+
+#srcfile ''

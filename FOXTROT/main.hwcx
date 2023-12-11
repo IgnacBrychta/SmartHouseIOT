@@ -1,0 +1,17 @@
+[Chanel]
+EEPROM=0
+SCH1_adr=0
+SCH2_adr=0
+SCH3_adr=0
+SCH4_adr=0
+ETH0_adr0=0
+ETH0_adr1=0
+ETH0_adr2=0
+ETH0_adr3=0
+
+[ETH]
+Count=1
+
+[USB]
+Count=0
+

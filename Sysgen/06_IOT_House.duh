@@ -1,0 +1,54 @@
+
+
+FUNCTION HandleDayNightCycle : BOOL
+(**)
+
+
+
+
+END_FUNCTION 
+
+FUNCTION HandleLights : BOOL
+(**)
+
+
+
+
+END_FUNCTION 
+
+FUNCTION HandleSecurity : BOOL
+(**)
+
+
+
+
+END_FUNCTION 
+
+FUNCTION HandleTemperature : BOOL
+(**)
+
+
+  VAR
+    seedAbs : DINT := 0;
+  END_VAR
+
+END_FUNCTION 
+
+FUNCTION PRNG : DINT
+(**)
+
+
+
+
+END_FUNCTION 
+
+FUNCTION Test : BOOL
+(**)
+
+
+
+
+END_FUNCTION 
+
+
+

@@ -1,0 +1,293 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\06_IOT_HOUSE.ST'
+
+; Global variables
+#def  timePLC int %S16
+#reg  int timeDelayed
+#reg  int switchCase
+#reg  bool bedroomLight
+#reg  bool childTopRoomLight
+#reg  bool garageLight
+#reg  bool childMiddleRoomLight
+#reg  bool bathroomLight
+#reg  bool hallLight
+#reg  bool wcLight
+#reg  bool kitchenLight
+#reg  bool patioLight
+#reg  bool livingRoomLight
+#reg  bool outsideLight
+#reg  bool cellarLight
+#reg  bool sun
+#reg  bool cycleSwitched
+#reg  bool bedroomDoor
+#reg  bool childTopRoomDoor
+#reg  bool childMiddleRoomDoor
+#reg  bool garageDoor
+#reg  bool garageGate
+#reg  bool bathroomDoor
+#reg  bool wcDoor
+#reg  bool cellarDoor
+#reg  bool patioDoor
+#reg  bool hallDoor
+#reg  string insideTemperatureText[81]
+#reg  string outsideTemperatureText[81]
+#reg  string MASTER_PASSKEY[81]
+#reg  string enteredPassKey[81]
+#reg  bool canOpenOutsideDoors
+#reg  bool alarmON
+#reg  bool alarmBlink
+#reg  string passKeyDefaultValue[81]
+#reg  int alarmTimerOFFsec
+#reg  int defaultAlarmTimerOFFsec
+#reg  dint insideTemperature
+#reg  bool heating
+#reg  dint outsideTemperature
+#reg  dint DESIRED_TEMPERATURE
+#reg  bool cooling
+#reg  bool masterLightSwitchON
+#reg  bool masterLightSwitchOFF
+#reg  bool bedroomLightSwitch
+#reg  bool childTopRoomLightSwitch
+#reg  bool garageLightSwitch
+#reg  bool childMiddleRoomLightSwitch
+#reg  bool bathroomLightSwitch
+#reg  bool hallLightSwitch
+#reg  bool wcLightSwitch
+#reg  bool kitchenLightSwitch
+#reg  bool patioLightSwitch
+#reg  bool livingRoomLightSwitch
+#reg  bool outsideLightSwitch
+#reg  bool cellarLightSwitch
+#reg  bool garageGateSwitch
+#reg  bool garageDoorSwitch
+#reg  bool frontDoorSwitch
+#reg  bool patioDoorSwitch
+#reg  int secsInMin
+#reg  int modTime
+#reg  dint modTemp
+#reg  bool random
+#reg  bool canCallTemperatureChange
+#reg  string textAllON[81]
+#reg  string textAllOFF[81]
+#reg  string textOutsideLights[81]
+#reg  string textPassKey[81]
+#reg  string textLights[81]
+#reg  string textSecuritySystem[81]
+#reg  dint seed  ; Initial seed value
+#reg  dint a  ; Multiplier
+#reg  dint c  ; Increment
+#reg  dint m  ; Modulus (2^31)
+#reg  dint randomValue
+#table byte __Init____insideTemperatureText = 
+    $00;
+#table byte __Init____outsideTemperatureText = 
+    $00;
+#table byte __Init____MASTER_PASSKEY = 
+    '1','2','3','4';
+#table byte __Init____enteredPassKey = 
+    $00;
+#table byte __Init____passKeyDefaultValue = 
+    $00;
+#table byte __Init____textAllON = 
+    'A','l','l',' ','O','N';
+#table byte __Init____textAllOFF = 
+    'A','l','l',' ','O','F','F';
+#table byte __Init____textOutsideLights = 
+    'O','u','t','s','i','d','e',' ','l','i','g','h','t','s';
+#table byte __Init____textPassKey = 
+    'P','a','s','s','K','e','y',':';
+#table byte __Init____textLights = 
+    'L','i','g','h','t','s',' ','C','o','n','t','r','o','l','l','e','r';
+#table byte __Init____textSecuritySystem = 
+    'S','e','c','u','r','i','t','y',' ','C','o','n','t','r','o','l','l','e','r';
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\06_IOT_HOUSE.ST'
+
+P     58
+; Initialize non retain global variables 
+ LD   int 0
+ WR   timeDelayed
+ LD   int 0
+ WR   switchCase
+ LD   bool 0   ; false
+ WR   bedroomLight
+ LD   bool 0   ; false
+ WR   childTopRoomLight
+ LD   bool 0   ; false
+ WR   garageLight
+ LD   bool 0   ; false
+ WR   childMiddleRoomLight
+ LD   bool 0   ; false
+ WR   bathroomLight
+ LD   bool 0   ; false
+ WR   hallLight
+ LD   bool 0   ; false
+ WR   wcLight
+ LD   bool 0   ; false
+ WR   kitchenLight
+ LD   bool 0   ; false
+ WR   patioLight
+ LD   bool 0   ; false
+ WR   livingRoomLight
+ LD   bool 0   ; false
+ WR   outsideLight
+ LD   bool 0   ; false
+ WR   cellarLight
+ LD   bool 0   ; false
+ WR   sun
+ LD   bool 0   ; false
+ WR   cycleSwitched
+ LD   bool 0   ; false
+ WR   bedroomDoor
+ LD   bool 0   ; false
+ WR   childTopRoomDoor
+ LD   bool 0   ; false
+ WR   childMiddleRoomDoor
+ LD   bool 0   ; false
+ WR   garageDoor
+ LD   bool 0   ; false
+ WR   garageGate
+ LD   bool 0   ; false
+ WR   bathroomDoor
+ LD   bool 0   ; false
+ WR   wcDoor
+ LD   bool 0   ; false
+ WR   cellarDoor
+ LD   bool 0   ; false
+ WR   patioDoor
+ LD   bool 0   ; false
+ WR   hallDoor
+ LD   0
+ SRC  byte __Init____insideTemperatureText
+ LD   0
+ LD   81
+ MOV  byte insideTemperatureText
+ LD   0
+ SRC  byte __Init____outsideTemperatureText
+ LD   0
+ LD   81
+ MOV  byte outsideTemperatureText
+ LD   0
+ SRC  byte __Init____MASTER_PASSKEY
+ LD   0
+ LD   81
+ MOV  byte MASTER_PASSKEY
+ LD   0
+ SRC  byte __Init____enteredPassKey
+ LD   0
+ LD   81
+ MOV  byte enteredPassKey
+ LD   bool 0   ; false
+ WR   canOpenOutsideDoors
+ LD   bool 0   ; false
+ WR   alarmON
+ LD   bool 0   ; false
+ WR   alarmBlink
+ LD   0
+ SRC  byte __Init____passKeyDefaultValue
+ LD   0
+ LD   81
+ MOV  byte passKeyDefaultValue
+ LD   int 0
+ WR   alarmTimerOFFsec
+ LD   int 5
+ WR   defaultAlarmTimerOFFsec
+ LD   dint 10
+ WR   insideTemperature
+ LD   bool 0   ; false
+ WR   heating
+ LD   dint 15
+ WR   outsideTemperature
+ LD   dint 21
+ WR   DESIRED_TEMPERATURE
+ LD   bool 0   ; false
+ WR   cooling
+ LD   bool 0   ; false
+ WR   masterLightSwitchON
+ LD   bool 0   ; false
+ WR   masterLightSwitchOFF
+ LD   bool 0   ; false
+ WR   bedroomLightSwitch
+ LD   bool 0   ; false
+ WR   childTopRoomLightSwitch
+ LD   bool 0   ; false
+ WR   garageLightSwitch
+ LD   bool 0   ; false
+ WR   childMiddleRoomLightSwitch
+ LD   bool 0   ; false
+ WR   bathroomLightSwitch
+ LD   bool 0   ; false
+ WR   hallLightSwitch
+ LD   bool 0   ; false
+ WR   wcLightSwitch
+ LD   bool 0   ; false
+ WR   kitchenLightSwitch
+ LD   bool 0   ; false
+ WR   patioLightSwitch
+ LD   bool 0   ; false
+ WR   livingRoomLightSwitch
+ LD   bool 0   ; false
+ WR   outsideLightSwitch
+ LD   bool 0   ; false
+ WR   cellarLightSwitch
+ LD   bool 0   ; false
+ WR   garageGateSwitch
+ LD   bool 0   ; false
+ WR   garageDoorSwitch
+ LD   bool 0   ; false
+ WR   frontDoorSwitch
+ LD   bool 0   ; false
+ WR   patioDoorSwitch
+ LD   int 6
+ WR   secsInMin
+ LD   int 0
+ WR   modTime
+ LD   dint 0
+ WR   modTemp
+ LD   bool 0   ; false
+ WR   random
+ LD   bool 0   ; false
+ WR   canCallTemperatureChange
+ LD   0
+ SRC  byte __Init____textAllON
+ LD   0
+ LD   81
+ MOV  byte textAllON
+ LD   0
+ SRC  byte __Init____textAllOFF
+ LD   0
+ LD   81
+ MOV  byte textAllOFF
+ LD   0
+ SRC  byte __Init____textOutsideLights
+ LD   0
+ LD   81
+ MOV  byte textOutsideLights
+ LD   0
+ SRC  byte __Init____textPassKey
+ LD   0
+ LD   81
+ MOV  byte textPassKey
+ LD   0
+ SRC  byte __Init____textLights
+ LD   0
+ LD   81
+ MOV  byte textLights
+ LD   0
+ SRC  byte __Init____textSecuritySystem
+ LD   0
+ LD   81
+ MOV  byte textSecuritySystem
+ LD   dint 123
+ WR   seed
+ LD   dint 1664525
+ WR   a
+ LD   dint 1013904223
+ WR   c
+ LD   dint 2147483647
+ WR   m
+E     58
+
+
+ 
+
+#srcfile ''

@@ -1,0 +1,104 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\SYSGEN\HWCONFIG.ST'
+
+; Global variables
+#def  CPU_TYPE 75
+#def  CPU_CODE 1014
+
+; Global types
+#struct  TAIStat
+  bool UNF,
+  bool UNR,
+  bool OVR,
+  bool OVF,
+  bool FLS,
+  bool CJC,
+  bool dummy6,
+  bool dummy7,
+  bool CHC,
+  bool dummy9,
+  bool dummy10,
+  bool dummy11,
+  bool dummy12,
+  bool dummy13,
+  bool dummy14,
+  bool dummy15
+#struct  TAI
+  TAIStat STAT,
+  int FS,
+  real ENG,
+  real PCT
+#struct  TBIN_8DI
+  bool DI0,
+  bool DI1,
+  bool DI2,
+  bool DI3,
+  bool DI4,
+  bool DI5,
+  bool DI6,
+  bool DI7
+#struct  TBIN_4DIP
+  bool DIP0,
+  bool DIP1,
+  bool DIP2,
+  bool DIP3
+#struct  TCNTF_IN
+  uint SCNT,
+  udint VALA,
+  udint VALB
+#struct  TCNTF_OUT
+  uint CCNT,
+  udint SET
+#struct  TBIN_6DO
+  bool DO0,
+  bool DO1,
+  bool DO2,
+  bool DO3,
+  bool DO4,
+  bool DO5
+#struct  TCHStatistic
+  usint STAT,
+  usint ERR,
+  udint trueMes,
+  udint falseMes
+#struct  TETHStatistic_BACnet
+  usint STAT,
+  usint ERR,
+  udint trueMes,
+  udint falseMes
+#struct  TCHControl
+  uint CONTROL
+
+; Global variables
+#def  r0_p0_Statistic_CH1 TCHStatistic %X7500
+#def  r0_p0_Control_CH1 TCHControl %Y7500
+
+; Global variables
+#reg  usint OI1073_Keyb
+#reg  usint OI1073_VideoRam[80]
+
+; Global variables
+#def  r0_p2_Statistic_MI_CIB1 TCHStatistic %X0
+#def  r0_p2_Control_MI_CIB1 TCHControl %Y0
+
+; Global variables
+#def  r0_p3_DI TBIN_8DI %X30
+#def  r0_p3_DIP TBIN_4DIP %X31
+#def  r0_p3_CNT_IN1 TCNTF_IN %X32
+#def  r0_p3_CNT_IN2 TCNTF_IN %X42
+#def  r0_p3_AI0 TAI %X52
+#def  r0_p3_AI1 TAI %X64
+#def  r0_p3_AI2 TAI %X76
+#def  r0_p3_AI3 TAI %X88
+#def  r0_p3_DO TBIN_6DO %Y6
+#def  r0_p3_dummy usint %Y7
+#def  r0_p3_CNT_OUT1 TCNTF_OUT %Y8
+#def  r0_p3_CNT_OUT2 TCNTF_OUT %Y14
+
+; Global variables
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\SYSGEN\HWCONFIG.ST'
+
+
+ 
+
+#srcfile ''

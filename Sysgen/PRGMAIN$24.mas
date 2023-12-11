@@ -1,0 +1,186 @@
+#srcfile 'C:\USERS\IGNáC\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\PRGMAIN.ST'
+
+#defpou prgMain
+  byte dummy
+
+ 
+#srcfile 'C:\USERS\IGNáC\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\PRGMAIN.ST'
+#pou prgMain
+#srcline 1 ;PROGRAM prgMain
+
+#struct prgMain__temp__
+  dint P0__st__,
+  string[82] PS0__st__,
+  string[82] PSC__st__
+#data byte _str_prgMain_0 = 
+  ' ','Â','°','C',0
+#data byte _str_prgMain_1 = 
+  ' ','Â','°','C',0
+P     61
+prgMain_L0:
+ LINK __SizeOf(prgMain__temp__)
+; Initialize - dynamic variables
+; End initialize - dynamic variables
+#srcline 11 ;  PRNG();
+ LEA  __Instance__PRNG
+ CAL  PRNG_L0
+#srcline 12 ;  modTemp := seed;
+ LD   seed
+#debug dint seed
+ WR   modTemp
+#debug_left dint modTemp
+#srcline 13 ;  modTemp := modTemp MOD 2;
+ LD   modTemp
+#debug dint modTemp
+ LD   dint 2
+ MODS
+ WR   modTemp
+#debug_left dint modTemp
+#srcline 14 ;  PRNG();
+ LEA  __Instance__PRNG
+ CAL  PRNG_L0
+#srcline 15 ;  random := seed < 0;
+ LD   seed
+#debug dint seed
+ LD   dint 0
+ LTS
+ WR   random
+#debug_left bool random
+#srcline 16 ;  HandleLights();
+ LEA  __Instance__HandleLights
+ CAL  HandleLights_L0
+#srcline 18 ;  HandleDayNightCycle();
+ LEA  __Instance__HandleDayNightCycle
+ CAL  HandleDayNightCycle_L0
+#srcline 19 ;  IF canCallTemperatureChange THEN
+ LD   canCallTemperatureChange
+#debug bool canCallTemperatureChange
+ JMC  prgMain_L1
+#srcline 20 ;  END_IF;
+prgMain_L1:
+#srcline 21 ;  insideTemperatureText := DINT_TO_STRING(insideTemperature) + ' Â°C';
+ LD   0   ; null string
+ WRY  PS0__st__[0]
+ LEAY PS0__st__[0]
+ LD   80
+ DST    ; Level 1
+ LD   0   ; null string
+ WRY  PSC__st__[0]
+ LEAY PSC__st__[0]
+ LD   80
+ DST    ; Level 2
+ LD   insideTemperature
+#debug dint insideTemperature
+ SCNV $0D30;  IEC_DINT _TO_ IEC_STRING
+ PDST   ; Level 2
+ LEAY PSC__st__[0]
+
+ SCON 
+ LEA  _str_prgMain_0
+ SCON 
+ PDST   ; Level 1
+ LD   0   ; null string
+ LEA  insideTemperatureText
+ WRI  
+ LEA  insideTemperatureText
+ LD   80
+ DST    ; Level 1
+ LEAY PS0__st__[0]
+ SCON 
+#debug_left string insideTemperatureText
+ PDST   ; Level 1
+#srcline 22 ;  outsideTemperatureText := DINT_TO_STRING(outsideTemperature) + ' Â°C';
+ LD   0   ; null string
+ WRY  PS0__st__[0]
+ LEAY PS0__st__[0]
+ LD   80
+ DST    ; Level 1
+ LD   0   ; null string
+ WRY  PSC__st__[0]
+ LEAY PSC__st__[0]
+ LD   80
+ DST    ; Level 2
+ LD   outsideTemperature
+#debug dint outsideTemperature
+ SCNV $0D30;  IEC_DINT _TO_ IEC_STRING
+ PDST   ; Level 2
+ LEAY PSC__st__[0]
+
+ SCON 
+ LEA  _str_prgMain_1
+ SCON 
+ PDST   ; Level 1
+ LD   0   ; null string
+ LEA  outsideTemperatureText
+ WRI  
+ LEA  outsideTemperatureText
+ LD   80
+ DST    ; Level 1
+ LEAY PS0__st__[0]
+ SCON 
+#debug_left string outsideTemperatureText
+ PDST   ; Level 1
+#srcline 24 ;  CASE switchCase OF
+ LD   switchCase
+#debug int switchCase
+ EXTW 
+ WRY  P0__st__
+ LD   0
+ LDY  P0__st__
+ EQ  
+ JMC  prgMain_L4
+#srcline 25 ;    0:
+#srcline 26 ;      IF timePLC >= timeDelayed THEN
+ LD   timePLC
+#debug int timePLC
+ EXTW 
+ LD   timeDelayed
+#debug int timeDelayed
+ EXTW 
+ LTS
+ NEG
+ JMC  prgMain_L5
+#srcline 27 ;        HandleTemperature();
+ LEA  __Instance__HandleTemperature
+ CAL  HandleTemperature_L0
+#srcline 28 ;        switchCase := 1;
+ LD   int 1
+ WR   switchCase
+#debug_left int switchCase
+#srcline 29 ;      END_IF;
+prgMain_L5:
+ JMP  prgMain_L3
+prgMain_L4:
+ LD   1
+ LDY  P0__st__
+ EQ  
+ JMC  prgMain_L7
+#srcline 30 ;    1: 
+#srcline 31 ;      timeDelayed := timePLC + 1;
+ LD   timePLC
+#debug int timePLC
+ EXTW 
+ LD   int 1
+ ADD
+ EXTW
+ WR   timeDelayed
+#debug_left int timeDelayed
+#srcline 32 ;      switchCase := 0;
+ LD   int 0
+ WR   switchCase
+#debug_left int switchCase
+ JMP  prgMain_L3
+prgMain_L7:
+prgMain_L3:
+#srcline 34 ;  
+#srcline 35 ;END_PROGRAM
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

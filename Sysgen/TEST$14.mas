@@ -1,0 +1,31 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\TEST.ST'
+
+#defpou Test
+  bool __fc__Test
+#reg Test  __Instance__Test
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\TEST.ST'
+#pou Test
+#srcline 1 ;FUNCTION Test : BOOL
+P     61
+Test_L0:
+ LINK 0
+ NXT
+; Initialize - variables
+ LD   0
+ WRX  __fc__Test
+; End initialize - variables
+#srcline 10 ;END_FUNCTION
+ PRV  
+ LDX  __fc__Test
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

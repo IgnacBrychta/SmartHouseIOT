@@ -1,0 +1,58 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\PRNG.ST'
+
+#defpou PRNG
+  dint __fc__PRNG
+#reg PRNG  __Instance__PRNG
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\PRNG.ST'
+#pou PRNG
+#srcline 1 ;FUNCTION PRNG : DINT
+P     61
+PRNG_L0:
+ LINK 0
+ NXT
+; Initialize - variables
+ LD   0
+ WRX  __fc__PRNG
+; End initialize - variables
+#srcline 11 ;  seed := a * seed;
+ LD   a
+#debug dint a
+ LD   seed
+#debug dint seed
+ MULS
+ WR   seed
+#debug_left dint seed
+#srcline 12 ;  seed := seed + c;
+ LD   seed
+#debug dint seed
+ LD   c
+#debug dint c
+ ADD
+ WR   seed
+#debug_left dint seed
+#srcline 13 ;  seed := seed MOD m;
+ LD   seed
+#debug dint seed
+ LD   m
+#debug dint m
+ MODS
+ WR   seed
+#debug_left dint seed
+#srcline 14 ;  RETURN;
+ JMP  PRNG_RET
+#srcline 15 ;END_FUNCTION
+PRNG_RET:
+ PRV  
+ LDX  __fc__PRNG
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

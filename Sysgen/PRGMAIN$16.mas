@@ -1,0 +1,26 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\PRGMAIN.ST'
+
+#defpou prgMain
+  byte dummy
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\PRGMAIN.ST'
+#pou prgMain
+#srcline 1 ;PROGRAM prgMain
+P     61
+prgMain_L0:
+ LINK 0
+#srcline 10 ;  Test();
+ LEA  __Instance__Test
+ CAL  Test_L0
+#srcline 11 ;END_PROGRAM
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

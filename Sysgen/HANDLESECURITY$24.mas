@@ -1,0 +1,155 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLESECURITY.ST'
+
+#defpou HandleSecurity
+  bool __fc__HandleSecurity
+#reg HandleSecurity  __Instance__HandleSecurity
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLESECURITY.ST'
+#pou HandleSecurity
+#srcline 1 ;FUNCTION HandleSecurity : BOOL
+
+#struct HandleSecurity__temp__
+  string[82] PS0__st__
+P     61
+HandleSecurity_L0:
+ LINK __SizeOf(HandleSecurity__temp__)
+ NXT
+; Initialize - variables
+ LD   0
+ WRX  __fc__HandleSecurity
+; End initialize - variables
+#srcline 11 ;  IF NOT enteredPassKey = passKeyDefaultValue THEN
+ LEA  enteredPassKey
+#debug string enteredPassKey
+ LEA  passKeyDefaultValue
+#debug string passKeyDefaultValue
+ SCMP 
+ EQ   0
+ NEG
+ JMC  HandleSecurity_L1
+#srcline 12 ;    IF enteredPassKey = MASTER_PASSKEY THEN
+ LEA  enteredPassKey
+#debug string enteredPassKey
+ LEA  MASTER_PASSKEY
+#debug string MASTER_PASSKEY
+ SCMP 
+ EQ   0
+ JMC  HandleSecurity_L3
+#srcline 13 ;      canOpenOutsideDoors := TRUE;
+ LD   bool -1       ; true
+ WR   canOpenOutsideDoors
+#debug_left bool canOpenOutsideDoors
+#srcline 14 ;      alarmON := FALSE;
+ LD   bool 0       ; false
+ WR   alarmON
+#debug_left bool alarmON
+#srcline 15 ;      alarmTimerOFFsec := defaultAlarmTimerOFFsec;
+ LD   defaultAlarmTimerOFFsec
+#debug int defaultAlarmTimerOFFsec
+ EXTW 
+ WR   alarmTimerOFFsec
+#debug_left int alarmTimerOFFsec
+#srcline 16 ;    ELSE
+ JMP  HandleSecurity_L4
+HandleSecurity_L3:
+#srcline 17 ;      alarmON := TRUE;
+ LD   bool -1       ; true
+ WR   alarmON
+#debug_left bool alarmON
+#srcline 18 ;      canOpenOutsideDoors := FALSE;
+ LD   bool 0       ; false
+ WR   canOpenOutsideDoors
+#debug_left bool canOpenOutsideDoors
+#srcline 19 ;    END_IF;
+HandleSecurity_L4:
+#srcline 20 ;    enteredPassKey := passKeyDefaultValue;
+ LD   0   ; null string
+ LEA  enteredPassKey
+ WRI  
+ LEA  enteredPassKey
+ LD   80
+ DST    ; Level 1
+ LEA  passKeyDefaultValue
+#debug string passKeyDefaultValue
+ SCON 
+#debug_left string enteredPassKey
+ PDST   ; Level 1
+#srcline 21 ;  END_IF;
+HandleSecurity_L1:
+#srcline 22 ;  
+#srcline 23 ;  IF canOpenOutsideDoors THEN
+ LD   canOpenOutsideDoors
+#debug bool canOpenOutsideDoors
+ JMC  HandleSecurity_L5
+#srcline 24 ;    garageGate := garageGateSwitch;
+ LD   garageGateSwitch
+#debug bool garageGateSwitch
+ WR   garageGate
+#debug_left bool garageGate
+#srcline 25 ;    garageDoor := garageDoorSwitch;
+ LD   garageDoorSwitch
+#debug bool garageDoorSwitch
+ WR   garageDoor
+#debug_left bool garageDoor
+#srcline 26 ;    patioDoor  := patioDoorSwitch;
+ LD   patioDoorSwitch
+#debug bool patioDoorSwitch
+ WR   patioDoor
+#debug_left bool patioDoor
+#srcline 27 ;    hallDoor   := frontDoorSwitch;
+ LD   frontDoorSwitch
+#debug bool frontDoorSwitch
+ WR   hallDoor
+#debug_left bool hallDoor
+#srcline 28 ;  ELSE
+ JMP  HandleSecurity_L6
+HandleSecurity_L5:
+#srcline 29 ;    garageGate := FALSE;
+ LD   bool 0       ; false
+ WR   garageGate
+#debug_left bool garageGate
+#srcline 30 ;    garageDoor := FALSE;
+ LD   bool 0       ; false
+ WR   garageDoor
+#debug_left bool garageDoor
+#srcline 31 ;    patioDoor  := FALSE;
+ LD   bool 0       ; false
+ WR   patioDoor
+#debug_left bool patioDoor
+#srcline 32 ;    hallDoor   := FALSE;
+ LD   bool 0       ; false
+ WR   hallDoor
+#debug_left bool hallDoor
+#srcline 34 ;    garageGateSwitch := FALSE;
+ LD   bool 0       ; false
+ WR   garageGateSwitch
+#debug_left bool garageGateSwitch
+#srcline 35 ;    garageDoorSwitch := FALSE;
+ LD   bool 0       ; false
+ WR   garageDoorSwitch
+#debug_left bool garageDoorSwitch
+#srcline 36 ;    patioDoorSwitch  := FALSE;
+ LD   bool 0       ; false
+ WR   patioDoorSwitch
+#debug_left bool patioDoorSwitch
+#srcline 37 ;    frontDoorSwitch  := FALSE;
+ LD   bool 0       ; false
+ WR   frontDoorSwitch
+#debug_left bool frontDoorSwitch
+#srcline 38 ;  END_IF;
+HandleSecurity_L6:
+#srcline 39 ;  
+#srcline 40 ;END_FUNCTION
+ PRV  
+ LDX  __fc__HandleSecurity
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

@@ -1,0 +1,139 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLETEMPERATURE.ST'
+
+#defpou HandleTemperature
+  bool __fc__HandleTemperature,
+  dint seedAbs
+#reg HandleTemperature  __Instance__HandleTemperature
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLETEMPERATURE.ST'
+#pou HandleTemperature
+#srcline 1 ;FUNCTION HandleTemperature : BOOL
+P     61
+HandleTemperature_L0:
+ LINK 0
+ NXT
+; Initialize - variables
+ LD   0
+ WRX  __fc__HandleTemperature
+ LD   dint 0
+ WRX  seedAbs
+; End initialize - variables
+#srcline 12 ;  seedAbs := ABS(seed);
+ LD   seed
+#debug dint seed
+ ABSL
+ WRX  seedAbs
+#debug_left dint seedAbs
+#srcline 13 ;  IF sun THEN
+ LD   sun
+#debug bool sun
+ JMC  HandleTemperature_L1
+#srcline 14 ;    outsideTemperature := outsideTemperature + (seedAbs MOD 3);
+ LD   outsideTemperature
+#debug dint outsideTemperature
+ LDX  seedAbs
+#debug dint seedAbs
+ LD   dint 3
+ MODS
+ ADD
+ WR   outsideTemperature
+#debug_left dint outsideTemperature
+#srcline 15 ;  ELSE
+ JMP  HandleTemperature_L2
+HandleTemperature_L1:
+#srcline 16 ;    outsideTemperature := outsideTemperature - (seedAbs MOD 3);
+ LD   outsideTemperature
+#debug dint outsideTemperature
+ LDX  seedAbs
+#debug dint seedAbs
+ LD   dint 3
+ MODS
+ SUB
+ WR   outsideTemperature
+#debug_left dint outsideTemperature
+#srcline 17 ;  END_IF;
+HandleTemperature_L2:
+#srcline 18 ;  insideTemperature := (insideTemperature + outsideTemperature) / 2;//insideTemperature + ((insideTemperature - outsideTemperature) / 2);
+ LD   insideTemperature
+#debug dint insideTemperature
+ LD   outsideTemperature
+#debug dint outsideTemperature
+ ADD
+ LD   dint 2
+ DIVS
+ WR   insideTemperature
+#debug_left dint insideTemperature
+#srcline 20 ;  IF insideTemperature = DESIRED_TEMPERATURE THEN
+ LD   insideTemperature
+#debug dint insideTemperature
+ LD   DESIRED_TEMPERATURE
+#debug dint DESIRED_TEMPERATURE
+ EQ
+ JMC  HandleTemperature_L3
+#srcline 21 ;    heating := FALSE;
+ LD   bool 0       ; false
+ WR   heating
+#debug_left bool heating
+#srcline 22 ;    cooling := FALSE;
+ LD   bool 0       ; false
+ WR   cooling
+#debug_left bool cooling
+#srcline 23 ;  ELSIF insideTemperature < DESIRED_TEMPERATURE THEN
+ JMP  HandleTemperature_L4
+HandleTemperature_L3:
+ LD   insideTemperature
+#debug dint insideTemperature
+ LD   DESIRED_TEMPERATURE
+#debug dint DESIRED_TEMPERATURE
+ LTS
+ JMC  HandleTemperature_L5
+#srcline 24 ;    heating := TRUE;
+ LD   bool -1       ; true
+ WR   heating
+#debug_left bool heating
+#srcline 25 ;    cooling := FALSE;
+ LD   bool 0       ; false
+ WR   cooling
+#debug_left bool cooling
+#srcline 26 ;    insideTemperature := insideTemperature + 3;
+ LD   insideTemperature
+#debug dint insideTemperature
+ LD   dint 3
+ ADD
+ WR   insideTemperature
+#debug_left dint insideTemperature
+#srcline 27 ;  ELSE
+ JMP  HandleTemperature_L4
+HandleTemperature_L5:
+#srcline 28 ;    cooling := TRUE;
+ LD   bool -1       ; true
+ WR   cooling
+#debug_left bool cooling
+#srcline 29 ;    heating := FALSE;
+ LD   bool 0       ; false
+ WR   heating
+#debug_left bool heating
+#srcline 30 ;    insideTemperature := insideTemperature - 3;
+ LD   insideTemperature
+#debug dint insideTemperature
+ LD   dint 3
+ SUB
+ WR   insideTemperature
+#debug_left dint insideTemperature
+#srcline 31 ;  END_IF;
+HandleTemperature_L4:
+#srcline 32 ;  
+#srcline 33 ;END_FUNCTION
+ PRV  
+ LDX  __fc__HandleTemperature
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

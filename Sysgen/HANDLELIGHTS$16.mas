@@ -1,0 +1,217 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLELIGHTS.ST'
+
+#defpou HandleLights
+  bool __fc__HandleLights
+#reg HandleLights  __Instance__HandleLights
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLELIGHTS.ST'
+#pou HandleLights
+#srcline 1 ;FUNCTION HandleLights : BOOL
+P     61
+HandleLights_L0:
+ LINK 0
+ NXT
+; Initialize - variables
+ LD   0
+ WRX  __fc__HandleLights
+; End initialize - variables
+#srcline 11 ;  IF masterLightSwitchOFF THEN
+ LD   masterLightSwitchOFF
+#debug bool masterLightSwitchOFF
+ JMC  HandleLights_L1
+#srcline 12 ;    bedroomLight         := FALSE;
+ LD   bool 0       ; false
+ WR   bedroomLight
+#debug_left bool bedroomLight
+#srcline 13 ;    childTopRoomLight    := FALSE;
+ LD   bool 0       ; false
+ WR   childTopRoomLight
+#debug_left bool childTopRoomLight
+#srcline 14 ;    garageLight          := FALSE;
+ LD   bool 0       ; false
+ WR   garageLight
+#debug_left bool garageLight
+#srcline 15 ;    childMiddleRoomLight := FALSE;
+ LD   bool 0       ; false
+ WR   childMiddleRoomLight
+#debug_left bool childMiddleRoomLight
+#srcline 16 ;    bathroomLight        := FALSE;
+ LD   bool 0       ; false
+ WR   bathroomLight
+#debug_left bool bathroomLight
+#srcline 17 ;    hallLight            := FALSE;
+ LD   bool 0       ; false
+ WR   hallLight
+#debug_left bool hallLight
+#srcline 18 ;    wcLight              := FALSE;
+ LD   bool 0       ; false
+ WR   wcLight
+#debug_left bool wcLight
+#srcline 19 ;    kitchenLight         := FALSE;
+ LD   bool 0       ; false
+ WR   kitchenLight
+#debug_left bool kitchenLight
+#srcline 20 ;    patioLight           := FALSE;
+ LD   bool 0       ; false
+ WR   patioLight
+#debug_left bool patioLight
+#srcline 21 ;    livingRoomLight      := FALSE;
+ LD   bool 0       ; false
+ WR   livingRoomLight
+#debug_left bool livingRoomLight
+#srcline 22 ;    outsideLight         := FALSE;
+ LD   bool 0       ; false
+ WR   outsideLight
+#debug_left bool outsideLight
+#srcline 23 ;    cellarLight          := FALSE;
+ LD   bool 0       ; false
+ WR   cellarLight
+#debug_left bool cellarLight
+#srcline 24 ;  ELSIF masterLightSwitchON THEN
+ JMP  HandleLights_L2
+HandleLights_L1:
+ LD   masterLightSwitchON
+#debug bool masterLightSwitchON
+ JMC  HandleLights_L3
+#srcline 25 ;    bedroomLight         := TRUE;
+ LD   bool -1       ; true
+ WR   bedroomLight
+#debug_left bool bedroomLight
+#srcline 26 ;    childTopRoomLight    := TRUE;
+ LD   bool -1       ; true
+ WR   childTopRoomLight
+#debug_left bool childTopRoomLight
+#srcline 27 ;    garageLight          := TRUE;
+ LD   bool -1       ; true
+ WR   garageLight
+#debug_left bool garageLight
+#srcline 28 ;    childMiddleRoomLight := TRUE;
+ LD   bool -1       ; true
+ WR   childMiddleRoomLight
+#debug_left bool childMiddleRoomLight
+#srcline 29 ;    bathroomLight        := TRUE;
+ LD   bool -1       ; true
+ WR   bathroomLight
+#debug_left bool bathroomLight
+#srcline 30 ;    hallLight            := TRUE;
+ LD   bool -1       ; true
+ WR   hallLight
+#debug_left bool hallLight
+#srcline 31 ;    wcLight              := TRUE;
+ LD   bool -1       ; true
+ WR   wcLight
+#debug_left bool wcLight
+#srcline 32 ;    kitchenLight         := TRUE;
+ LD   bool -1       ; true
+ WR   kitchenLight
+#debug_left bool kitchenLight
+#srcline 33 ;    patioLight           := TRUE;
+ LD   bool -1       ; true
+ WR   patioLight
+#debug_left bool patioLight
+#srcline 34 ;    livingRoomLight      := TRUE;
+ LD   bool -1       ; true
+ WR   livingRoomLight
+#debug_left bool livingRoomLight
+#srcline 35 ;    outsideLight         := TRUE;
+ LD   bool -1       ; true
+ WR   outsideLight
+#debug_left bool outsideLight
+#srcline 36 ;    cellarLight          := TRUE; 
+ LD   bool -1       ; true
+ WR   cellarLight
+#debug_left bool cellarLight
+#srcline 37 ;  ELSE
+ JMP  HandleLights_L2
+HandleLights_L3:
+#srcline 38 ;    bedroomLight         := bedroomLightSwitch;
+ LD   bedroomLightSwitch
+#debug bool bedroomLightSwitch
+ WR   bedroomLight
+#debug_left bool bedroomLight
+#srcline 39 ;    childTopRoomLight    := childTopRoomLightSwitch;
+ LD   childTopRoomLightSwitch
+#debug bool childTopRoomLightSwitch
+ WR   childTopRoomLight
+#debug_left bool childTopRoomLight
+#srcline 40 ;    garageLight          := garageLightSwitch;
+ LD   garageLightSwitch
+#debug bool garageLightSwitch
+ WR   garageLight
+#debug_left bool garageLight
+#srcline 41 ;    childMiddleRoomLight := childMiddleRoomLightSwitch;
+ LD   childMiddleRoomLightSwitch
+#debug bool childMiddleRoomLightSwitch
+ WR   childMiddleRoomLight
+#debug_left bool childMiddleRoomLight
+#srcline 42 ;    bathroomLight        := bathroomLightSwitch;
+ LD   bathroomLightSwitch
+#debug bool bathroomLightSwitch
+ WR   bathroomLight
+#debug_left bool bathroomLight
+#srcline 43 ;    hallLight            := hallLightSwitch;
+ LD   hallLightSwitch
+#debug bool hallLightSwitch
+ WR   hallLight
+#debug_left bool hallLight
+#srcline 44 ;    wcLight              := wcLightSwitch;
+ LD   wcLightSwitch
+#debug bool wcLightSwitch
+ WR   wcLight
+#debug_left bool wcLight
+#srcline 45 ;    kitchenLight         := kitchenLightSwitch;
+ LD   kitchenLightSwitch
+#debug bool kitchenLightSwitch
+ WR   kitchenLight
+#debug_left bool kitchenLight
+#srcline 46 ;    patioLight           := patioLightSwitch;
+ LD   patioLightSwitch
+#debug bool patioLightSwitch
+ WR   patioLight
+#debug_left bool patioLight
+#srcline 47 ;    livingRoomLight      := livingRoomLightSwitch;
+ LD   livingRoomLightSwitch
+#debug bool livingRoomLightSwitch
+ WR   livingRoomLight
+#debug_left bool livingRoomLight
+#srcline 48 ;    cellarLight          := cellarLightSwitch;
+ LD   cellarLightSwitch
+#debug bool cellarLightSwitch
+ WR   cellarLight
+#debug_left bool cellarLight
+#srcline 49 ;    IF NOT SUN THEN
+ LD   SUN
+#debug bool SUN
+ NEG
+ JMC  HandleLights_L4
+#srcline 50 ;      outsideLight       := TRUE;
+ LD   bool -1       ; true
+ WR   outsideLight
+#debug_left bool outsideLight
+#srcline 51 ;    ELSE
+ JMP  HandleLights_L5
+HandleLights_L4:
+#srcline 52 ;      outsideLight       := outsideLightSwitch;
+ LD   outsideLightSwitch
+#debug bool outsideLightSwitch
+ WR   outsideLight
+#debug_left bool outsideLight
+#srcline 53 ;    END_IF;
+HandleLights_L5:
+#srcline 54 ;  END_IF;
+HandleLights_L2:
+#srcline 55 ;  
+#srcline 56 ;END_FUNCTION
+ PRV  
+ LDX  __fc__HandleLights
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

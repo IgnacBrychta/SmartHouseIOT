@@ -1,0 +1,15 @@
+FUNCTION PRNG : DINT
+  VAR_INPUT
+  END_VAR
+  VAR_IN_OUT
+  END_VAR
+  VAR
+  END_VAR
+  VAR_TEMP
+  END_VAR
+  
+  seed := a * seed;
+  seed := seed + c;
+  seed := seed MOD m;
+  RETURN;
+END_FUNCTION

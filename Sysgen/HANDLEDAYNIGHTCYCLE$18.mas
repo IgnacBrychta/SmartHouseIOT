@@ -1,0 +1,107 @@
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLEDAYNIGHTCYCLE.ST'
+
+#defpou HandleDayNightCycle
+  bool __fc__HandleDayNightCycle
+#reg HandleDayNightCycle  __Instance__HandleDayNightCycle
+
+ 
+#srcfile 'C:\USERS\IGN·C\DOCUMENTS\PLC\WINTER_PLC\06_IOT_HOUSE\HANDLEDAYNIGHTCYCLE.ST'
+#pou HandleDayNightCycle
+#srcline 1 ;FUNCTION HandleDayNightCycle : BOOL
+P     61
+HandleDayNightCycle_L0:
+ LINK 0
+ NXT
+; Initialize - variables
+ LD   0
+ WRX  __fc__HandleDayNightCycle
+; End initialize - variables
+#srcline 11 ;  modTime := timePLC MOD secsInMin;
+ LD   timePLC
+#debug int timePLC
+ EXTW 
+ LD   secsInMin
+#debug int secsInMin
+ EXTW
+ MODS
+ EXTW
+ WR   modTime
+#debug_left int modTime
+#srcline 12 ;  IF modTime = 0 AND NOT cycleSwitched THEN
+ LD   modTime
+#debug int modTime
+ EXTW 
+ LD   int 0
+ EQ
+ LD   cycleSwitched
+#debug bool cycleSwitched
+ NEG
+ AND
+ JMC  HandleDayNightCycle_L1
+#srcline 13 ;    cycleSwitched := TRUE;
+ LD   bool -1       ; true
+ WR   cycleSwitched
+#debug_left bool cycleSwitched
+#srcline 14 ;    IF sun THEN
+ LD   sun
+#debug bool sun
+ JMC  HandleDayNightCycle_L3
+#srcline 15 ;      sun := FALSE;
+ LD   bool 0       ; false
+ WR   sun
+#debug_left bool sun
+#srcline 16 ;    ELSE
+ JMP  HandleDayNightCycle_L4
+HandleDayNightCycle_L3:
+#srcline 17 ;      sun := TRUE;
+ LD   bool -1       ; true
+ WR   sun
+#debug_left bool sun
+#srcline 18 ;    END_IF;
+HandleDayNightCycle_L4:
+#srcline 19 ;    canCallTemperatureChange := TRUE;
+ LD   bool -1       ; true
+ WR   canCallTemperatureChange
+#debug_left bool canCallTemperatureChange
+#srcline 20 ;  ELSIF modTime = 0 AND cycleSwitched THEN
+ JMP  HandleDayNightCycle_L2
+HandleDayNightCycle_L1:
+ LD   modTime
+#debug int modTime
+ EXTW 
+ LD   int 0
+ EQ
+ LD   cycleSwitched
+#debug bool cycleSwitched
+ AND
+ JMC  HandleDayNightCycle_L5
+#srcline 21 ;    canCallTemperatureChange := FALSE;
+ LD   bool 0       ; false
+ WR   canCallTemperatureChange
+#debug_left bool canCallTemperatureChange
+#srcline 22 ;  ELSE
+ JMP  HandleDayNightCycle_L2
+HandleDayNightCycle_L5:
+#srcline 23 ;    cycleSwitched := false;
+ LD   bool 0       ; false
+ WR   cycleSwitched
+#debug_left bool cycleSwitched
+#srcline 24 ;    canCallTemperatureChange := FALSE;
+ LD   bool 0       ; false
+ WR   canCallTemperatureChange
+#debug_left bool canCallTemperatureChange
+#srcline 25 ;  END_IF;
+HandleDayNightCycle_L2:
+#srcline 26 ;END_FUNCTION
+ PRV  
+ LDX  __fc__HandleDayNightCycle
+ ULNK
+RET
+E     61
+#endpou 
+
+
+
+ 
+
+#srcfile ''

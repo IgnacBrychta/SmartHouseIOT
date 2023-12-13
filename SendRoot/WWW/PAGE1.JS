@@ -45,7 +45,7 @@ if(xmlhttpGET.status != 200){
 alert('Problem retrieving XML data ' + xmlhttpGET.statusText + '(' + xmlhttpGET.status + ')');
 document.location.reload(true)
 return;}
-var access = xmlhttpGET.responseXML.documentElement.getElementsByTagName('ACCESS')[0]; if(!access || access.getAttribute('UCID') != 1702313369) {document.location.reload(true); return;}
+var access = xmlhttpGET.responseXML.documentElement.getElementsByTagName('ACCESS')[0]; if(!access || access.getAttribute('UCID') != 1702374517) {document.location.reload(true); return;}
 var pd = '';
 var x=xmlhttpGET.responseXML.documentElement.getElementsByTagName('INPUT');
 if(x[0]) {
@@ -396,195 +396,38 @@ SetBg('INPUT36', 'SPINAC0.PNG');
 SetBg('INPUT36', 'SPINAC1.PNG');
 }}
 var Input37 = document.getElementById('INPUT37');
-var Input37h = document.getElementById('INPUT37h');
-if(Input37h) { vz = x[27].getAttribute('VALUE') == '0'; iz = Input37h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input37h.value = '1';
-Input37.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input37.getAttribute('value') != null) {Input37.value = '';} else {}
-} else {
-Input37h.value = '0';
-Input37.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input37.getAttribute('value') != null) {Input37.value = '';
-} else {}
-}}} else {
-if(x[27].getAttribute('VALUE') == '0') {
-SetBg('INPUT37', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT37', 'SPINAC1.PNG');
-}}
+Input37.value = x[27].getAttribute('VALUE');
 var Input38 = document.getElementById('INPUT38');
-var Input38h = document.getElementById('INPUT38h');
-if(Input38h) { vz = x[28].getAttribute('VALUE') == '0'; iz = Input38h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input38h.value = '1';
-Input38.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input38.getAttribute('value') != null) {Input38.value = '';} else {}
-} else {
-Input38h.value = '0';
-Input38.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input38.getAttribute('value') != null) {Input38.value = '';
-} else {}
-}}} else {
-if(x[28].getAttribute('VALUE') == '0') {
-SetBg('INPUT38', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT38', 'SPINAC1.PNG');
-}}
+Input38.value = x[28].getAttribute('VALUE');
 var Input39 = document.getElementById('INPUT39');
-var Input39h = document.getElementById('INPUT39h');
-if(Input39h) { vz = x[29].getAttribute('VALUE') == '0'; iz = Input39h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input39h.value = '1';
-Input39.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input39.getAttribute('value') != null) {Input39.value = '';} else {}
-} else {
-Input39h.value = '0';
-Input39.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input39.getAttribute('value') != null) {Input39.value = '';
-} else {}
-}}} else {
 if(x[29].getAttribute('VALUE') == '0') {
-SetBg('INPUT39', 'SPINAC0.PNG');
+SetBg('INPUT39', 'KLIMAT_1.PNG');
 } else {
-SetBg('INPUT39', 'SPINAC1.PNG');
-}}
+SetBg('INPUT39', 'KLIMAT_2.PNG');
+}
 var Input40 = document.getElementById('INPUT40');
-var Input40h = document.getElementById('INPUT40h');
-if(Input40h) { vz = x[30].getAttribute('VALUE') == '0'; iz = Input40h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input40h.value = '1';
-Input40.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input40.getAttribute('value') != null) {Input40.value = '';} else {}
-} else {
-Input40h.value = '0';
-Input40.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input40.getAttribute('value') != null) {Input40.value = '';
-} else {}
-}}} else {
-if(x[30].getAttribute('VALUE') == '0') {
-SetBg('INPUT40', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT40', 'SPINAC1.PNG');
-}}
+Input40.value = x[30].getAttribute('VALUE');
 var Input41 = document.getElementById('INPUT41');
-var Input41h = document.getElementById('INPUT41h');
-if(Input41h) { vz = x[31].getAttribute('VALUE') == '0'; iz = Input41h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input41h.value = '1';
-Input41.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input41.getAttribute('value') != null) {Input41.value = '';} else {}
-} else {
-Input41h.value = '0';
-Input41.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input41.getAttribute('value') != null) {Input41.value = '';
-} else {}
-}}} else {
-if(x[31].getAttribute('VALUE') == '0') {
-SetBg('INPUT41', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT41', 'SPINAC1.PNG');
-}}
+Input41.value = x[31].getAttribute('VALUE');
 var Input42 = document.getElementById('INPUT42');
-var Input42h = document.getElementById('INPUT42h');
-if(Input42h) { vz = x[32].getAttribute('VALUE') == '0'; iz = Input42h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input42h.value = '1';
-Input42.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input42.getAttribute('value') != null) {Input42.value = '';} else {}
-} else {
-Input42h.value = '0';
-Input42.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input42.getAttribute('value') != null) {Input42.value = '';
-} else {}
-}}} else {
-if(x[32].getAttribute('VALUE') == '0') {
-SetBg('INPUT42', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT42', 'SPINAC1.PNG');
-}}
+Input42.value = x[32].getAttribute('VALUE');
 var Input43 = document.getElementById('INPUT43');
-var Input43h = document.getElementById('INPUT43h');
-if(Input43h) { vz = x[33].getAttribute('VALUE') == '0'; iz = Input43h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input43h.value = '1';
-Input43.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input43.getAttribute('value') != null) {Input43.value = '';} else {}
-} else {
-Input43h.value = '0';
-Input43.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input43.getAttribute('value') != null) {Input43.value = '';
-} else {}
-}}} else {
-if(x[33].getAttribute('VALUE') == '0') {
-SetBg('INPUT43', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT43', 'SPINAC1.PNG');
-}}
+if(!InputEdited[42]) {
+UpdateValue(Input43, x[33], '#000000');}
 var Input44 = document.getElementById('INPUT44');
-var Input44h = document.getElementById('INPUT44h');
-if(Input44h) { vz = x[34].getAttribute('VALUE') == '0'; iz = Input44h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input44h.value = '1';
-Input44.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input44.getAttribute('value') != null) {Input44.value = '';} else {}
-} else {
-Input44h.value = '0';
-Input44.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input44.getAttribute('value') != null) {Input44.value = '';
-} else {}
-}}} else {
 if(x[34].getAttribute('VALUE') == '0') {
-SetBg('INPUT44', 'SPINAC0.PNG');
+SetBg('INPUT44', 'ALARM0.PNG');
 } else {
-SetBg('INPUT44', 'SPINAC1.PNG');
-}}
+SetBg('INPUT44', 'ALARM1.PNG');
+}
 var Input45 = document.getElementById('INPUT45');
-var Input45h = document.getElementById('INPUT45h');
-if(Input45h) { vz = x[35].getAttribute('VALUE') == '0'; iz = Input45h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input45h.value = '1';
-Input45.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input45.getAttribute('value') != null) {Input45.value = '';} else {}
-} else {
-Input45h.value = '0';
-Input45.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input45.getAttribute('value') != null) {Input45.value = '';
-} else {}
-}}} else {
 if(x[35].getAttribute('VALUE') == '0') {
-SetBg('INPUT45', 'SPINAC0.PNG');
+SetBg('INPUT45', 'ZAMEK0.PNG');
 } else {
-SetBg('INPUT45', 'SPINAC1.PNG');
-}}
+SetBg('INPUT45', 'ZAMEK1.PNG');
+}
 var Input46 = document.getElementById('INPUT46');
-var Input46h = document.getElementById('INPUT46h');
-if(Input46h) { vz = x[36].getAttribute('VALUE') == '0'; iz = Input46h.value == '0';
-if(vz == iz) {
-if(vz) {
-Input46h.value = '1';
-Input46.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
-if(Input46.getAttribute('value') != null) {Input46.value = '';} else {}
-} else {
-Input46h.value = '0';
-Input46.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
-if(Input46.getAttribute('value') != null) {Input46.value = '';
-} else {}
-}}} else {
-if(x[36].getAttribute('VALUE') == '0') {
-SetBg('INPUT46', 'SPINAC0.PNG');
-} else {
-SetBg('INPUT46', 'SPINAC1.PNG');
-}}
+Input46.value = x[36].getAttribute('VALUE');
 var Input47 = document.getElementById('INPUT47');
 var Input47h = document.getElementById('INPUT47h');
 if(Input47h) { vz = x[37].getAttribute('VALUE') == '0'; iz = Input47h.value == '0';
@@ -605,38 +448,161 @@ SetBg('INPUT47', 'SPINAC0.PNG');
 SetBg('INPUT47', 'SPINAC1.PNG');
 }}
 var Input48 = document.getElementById('INPUT48');
-Input48.value = x[38].getAttribute('VALUE');
-var Input49 = document.getElementById('INPUT49');
-Input49.value = x[39].getAttribute('VALUE');
-var Input50 = document.getElementById('INPUT50');
-if(x[40].getAttribute('VALUE') == '0') {
-SetBg('INPUT50', 'KLIMAT_1.PNG');
+var Input48h = document.getElementById('INPUT48h');
+if(Input48h) { vz = x[38].getAttribute('VALUE') == '0'; iz = Input48h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input48h.value = '1';
+Input48.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input48.getAttribute('value') != null) {Input48.value = '';} else {}
 } else {
-SetBg('INPUT50', 'KLIMAT_2.PNG');
-}
+Input48h.value = '0';
+Input48.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input48.getAttribute('value') != null) {Input48.value = '';
+} else {}
+}}} else {
+if(x[38].getAttribute('VALUE') == '0') {
+SetBg('INPUT48', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT48', 'SPINAC1.PNG');
+}}
+var Input49 = document.getElementById('INPUT49');
+var Input49h = document.getElementById('INPUT49h');
+if(Input49h) { vz = x[39].getAttribute('VALUE') == '0'; iz = Input49h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input49h.value = '1';
+Input49.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input49.getAttribute('value') != null) {Input49.value = '';} else {}
+} else {
+Input49h.value = '0';
+Input49.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input49.getAttribute('value') != null) {Input49.value = '';
+} else {}
+}}} else {
+if(x[39].getAttribute('VALUE') == '0') {
+SetBg('INPUT49', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT49', 'SPINAC1.PNG');
+}}
+var Input50 = document.getElementById('INPUT50');
+var Input50h = document.getElementById('INPUT50h');
+if(Input50h) { vz = x[40].getAttribute('VALUE') == '0'; iz = Input50h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input50h.value = '1';
+Input50.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input50.getAttribute('value') != null) {Input50.value = '';} else {}
+} else {
+Input50h.value = '0';
+Input50.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input50.getAttribute('value') != null) {Input50.value = '';
+} else {}
+}}} else {
+if(x[40].getAttribute('VALUE') == '0') {
+SetBg('INPUT50', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT50', 'SPINAC1.PNG');
+}}
 var Input51 = document.getElementById('INPUT51');
 Input51.value = x[41].getAttribute('VALUE');
 var Input52 = document.getElementById('INPUT52');
 Input52.value = x[42].getAttribute('VALUE');
 var Input53 = document.getElementById('INPUT53');
-Input53.value = x[43].getAttribute('VALUE');
+var Input53h = document.getElementById('INPUT53h');
+if(Input53h) { vz = x[43].getAttribute('VALUE') == '0'; iz = Input53h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input53h.value = '1';
+Input53.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input53.getAttribute('value') != null) {Input53.value = '';} else {}
+} else {
+Input53h.value = '0';
+Input53.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input53.getAttribute('value') != null) {Input53.value = '';
+} else {}
+}}} else {
+if(x[43].getAttribute('VALUE') == '0') {
+SetBg('INPUT53', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT53', 'SPINAC1.PNG');
+}}
 var Input54 = document.getElementById('INPUT54');
-if(!InputEdited[53]) {
-UpdateValue(Input54, x[44], '#000000');}
+var Input54h = document.getElementById('INPUT54h');
+if(Input54h) { vz = x[44].getAttribute('VALUE') == '0'; iz = Input54h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input54h.value = '1';
+Input54.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input54.getAttribute('value') != null) {Input54.value = '';} else {}
+} else {
+Input54h.value = '0';
+Input54.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input54.getAttribute('value') != null) {Input54.value = '';
+} else {}
+}}} else {
+if(x[44].getAttribute('VALUE') == '0') {
+SetBg('INPUT54', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT54', 'SPINAC1.PNG');
+}}
 var Input55 = document.getElementById('INPUT55');
+var Input55h = document.getElementById('INPUT55h');
+if(Input55h) { vz = x[45].getAttribute('VALUE') == '0'; iz = Input55h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input55h.value = '1';
+Input55.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input55.getAttribute('value') != null) {Input55.value = '';} else {}
+} else {
+Input55h.value = '0';
+Input55.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input55.getAttribute('value') != null) {Input55.value = '';
+} else {}
+}}} else {
 if(x[45].getAttribute('VALUE') == '0') {
-SetBg('INPUT55', 'ALARM0.PNG');
+SetBg('INPUT55', 'SPINAC0.PNG');
 } else {
-SetBg('INPUT55', 'ALARM1.PNG');
-}
+SetBg('INPUT55', 'SPINAC1.PNG');
+}}
 var Input56 = document.getElementById('INPUT56');
-if(x[46].getAttribute('VALUE') == '0') {
-SetBg('INPUT56', 'ZAMEK0.PNG');
+var Input56h = document.getElementById('INPUT56h');
+if(Input56h) { vz = x[46].getAttribute('VALUE') == '0'; iz = Input56h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input56h.value = '1';
+Input56.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input56.getAttribute('value') != null) {Input56.value = '';} else {}
 } else {
-SetBg('INPUT56', 'ZAMEK1.PNG');
-}
+Input56h.value = '0';
+Input56.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input56.getAttribute('value') != null) {Input56.value = '';
+} else {}
+}}} else {
+if(x[46].getAttribute('VALUE') == '0') {
+SetBg('INPUT56', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT56', 'SPINAC1.PNG');
+}}
 var Input57 = document.getElementById('INPUT57');
-Input57.value = x[47].getAttribute('VALUE');
+var Input57h = document.getElementById('INPUT57h');
+if(Input57h) { vz = x[47].getAttribute('VALUE') == '0'; iz = Input57h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input57h.value = '1';
+Input57.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input57.getAttribute('value') != null) {Input57.value = '';} else {}
+} else {
+Input57h.value = '0';
+Input57.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input57.getAttribute('value') != null) {Input57.value = '';
+} else {}
+}}} else {
+if(x[47].getAttribute('VALUE') == '0') {
+SetBg('INPUT57', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT57', 'SPINAC1.PNG');
+}}
 var Input58 = document.getElementById('INPUT58');
 var Input58h = document.getElementById('INPUT58h');
 if(Input58h) { vz = x[48].getAttribute('VALUE') == '0'; iz = Input58h.value == '0';
@@ -714,9 +680,61 @@ SetBg('INPUT61', 'SPINAC0.PNG');
 SetBg('INPUT61', 'SPINAC1.PNG');
 }}
 var Input62 = document.getElementById('INPUT62');
-Input62.value = x[52].getAttribute('VALUE');
+var Input62h = document.getElementById('INPUT62h');
+if(Input62h) { vz = x[52].getAttribute('VALUE') == '0'; iz = Input62h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input62h.value = '1';
+Input62.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input62.getAttribute('value') != null) {Input62.value = '';} else {}
+} else {
+Input62h.value = '0';
+Input62.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input62.getAttribute('value') != null) {Input62.value = '';
+} else {}
+}}} else {
+if(x[52].getAttribute('VALUE') == '0') {
+SetBg('INPUT62', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT62', 'SPINAC1.PNG');
+}}
 var Input63 = document.getElementById('INPUT63');
-Input63.value = x[53].getAttribute('VALUE');
+var Input63h = document.getElementById('INPUT63h');
+if(Input63h) { vz = x[53].getAttribute('VALUE') == '0'; iz = Input63h.value == '0';
+if(vz == iz) {
+if(vz) {
+Input63h.value = '1';
+Input63.style.backgroundImage = 'url("IMAGES/SPINAC0.PNG")';
+if(Input63.getAttribute('value') != null) {Input63.value = '';} else {}
+} else {
+Input63h.value = '0';
+Input63.style.backgroundImage = 'url("IMAGES/SPINAC1.PNG")';
+if(Input63.getAttribute('value') != null) {Input63.value = '';
+} else {}
+}}} else {
+if(x[53].getAttribute('VALUE') == '0') {
+SetBg('INPUT63', 'SPINAC0.PNG');
+} else {
+SetBg('INPUT63', 'SPINAC1.PNG');
+}}
+var Input64 = document.getElementById('INPUT64');
+if(x[34].getAttribute('VALUE') == '0') {
+SetBg('INPUT64', 'ALARM0.PNG');
+} else {
+SetBg('INPUT64', 'ALARM1.PNG');
+}
+var Input65 = document.getElementById('INPUT65');
+if(x[12].getAttribute('VALUE') == '0') {
+SetBg('INPUT65', 'ZAROVKA0.PNG');
+} else {
+SetBg('INPUT65', 'ZAROVKA1.PNG');
+}
+var Input66 = document.getElementById('INPUT66');
+if(x[12].getAttribute('VALUE') == '0') {
+SetBg('INPUT66', 'ZAROVKA0.PNG');
+} else {
+SetBg('INPUT66', 'ZAROVKA1.PNG');
+}
 } else {document.location.reload(true); return;}
 } catch(err) {console.log(err.message)}
 if(pd!=''){setTimeout("GetXML('PAGE1.XML','"+pd+"')",1);}else{setTimeout("GetXML('PAGE1.XML')",1000);}}
@@ -769,55 +787,47 @@ function PostXML36() {
 var Input36h = document.getElementById('INPUT36h');
 PostXML('PAGE1.XML', encodeURIComponent(Input36h.name+'='+Input36h.value));
 }
-function PostXML37() {
-var Input37h = document.getElementById('INPUT37h');
-PostXML('PAGE1.XML', encodeURIComponent(Input37h.name+'='+Input37h.value));
-}
-function PostXML38() {
-var Input38h = document.getElementById('INPUT38h');
-PostXML('PAGE1.XML', encodeURIComponent(Input38h.name+'='+Input38h.value));
-}
-function PostXML39() {
-var Input39h = document.getElementById('INPUT39h');
-PostXML('PAGE1.XML', encodeURIComponent(Input39h.name+'='+Input39h.value));
-}
-function PostXML40() {
-var Input40h = document.getElementById('INPUT40h');
-PostXML('PAGE1.XML', encodeURIComponent(Input40h.name+'='+Input40h.value));
-}
-function PostXML41() {
-var Input41h = document.getElementById('INPUT41h');
-PostXML('PAGE1.XML', encodeURIComponent(Input41h.name+'='+Input41h.value));
-}
-function PostXML42() {
-var Input42h = document.getElementById('INPUT42h');
-PostXML('PAGE1.XML', encodeURIComponent(Input42h.name+'='+Input42h.value));
-}
 function PostXML43() {
-var Input43h = document.getElementById('INPUT43h');
-PostXML('PAGE1.XML', encodeURIComponent(Input43h.name+'='+Input43h.value));
+var Input43 = document.getElementById('INPUT43');
+document.getElementById('INPUT43x').style.visibility = 'hidden';if(InputEdited[42]) {
+PostXML('PAGE1.XML', encodeURIComponent(Input43.name+'='+Input43.value)); InputEdited[42] = 0;
 }
-function PostXML44() {
-var Input44h = document.getElementById('INPUT44h');
-PostXML('PAGE1.XML', encodeURIComponent(Input44h.name+'='+Input44h.value));
-}
-function PostXML45() {
-var Input45h = document.getElementById('INPUT45h');
-PostXML('PAGE1.XML', encodeURIComponent(Input45h.name+'='+Input45h.value));
-}
-function PostXML46() {
-var Input46h = document.getElementById('INPUT46h');
-PostXML('PAGE1.XML', encodeURIComponent(Input46h.name+'='+Input46h.value));
 }
 function PostXML47() {
 var Input47h = document.getElementById('INPUT47h');
 PostXML('PAGE1.XML', encodeURIComponent(Input47h.name+'='+Input47h.value));
 }
-function PostXML54() {
-var Input54 = document.getElementById('INPUT54');
-document.getElementById('INPUT54x').style.visibility = 'hidden';if(InputEdited[53]) {
-PostXML('PAGE1.XML', encodeURIComponent(Input54.name+'='+Input54.value)); InputEdited[53] = 0;
+function PostXML48() {
+var Input48h = document.getElementById('INPUT48h');
+PostXML('PAGE1.XML', encodeURIComponent(Input48h.name+'='+Input48h.value));
 }
+function PostXML49() {
+var Input49h = document.getElementById('INPUT49h');
+PostXML('PAGE1.XML', encodeURIComponent(Input49h.name+'='+Input49h.value));
+}
+function PostXML50() {
+var Input50h = document.getElementById('INPUT50h');
+PostXML('PAGE1.XML', encodeURIComponent(Input50h.name+'='+Input50h.value));
+}
+function PostXML53() {
+var Input53h = document.getElementById('INPUT53h');
+PostXML('PAGE1.XML', encodeURIComponent(Input53h.name+'='+Input53h.value));
+}
+function PostXML54() {
+var Input54h = document.getElementById('INPUT54h');
+PostXML('PAGE1.XML', encodeURIComponent(Input54h.name+'='+Input54h.value));
+}
+function PostXML55() {
+var Input55h = document.getElementById('INPUT55h');
+PostXML('PAGE1.XML', encodeURIComponent(Input55h.name+'='+Input55h.value));
+}
+function PostXML56() {
+var Input56h = document.getElementById('INPUT56h');
+PostXML('PAGE1.XML', encodeURIComponent(Input56h.name+'='+Input56h.value));
+}
+function PostXML57() {
+var Input57h = document.getElementById('INPUT57h');
+PostXML('PAGE1.XML', encodeURIComponent(Input57h.name+'='+Input57h.value));
 }
 function PostXML58() {
 var Input58h = document.getElementById('INPUT58h');
@@ -834,6 +844,14 @@ PostXML('PAGE1.XML', encodeURIComponent(Input60h.name+'='+Input60h.value));
 function PostXML61() {
 var Input61h = document.getElementById('INPUT61h');
 PostXML('PAGE1.XML', encodeURIComponent(Input61h.name+'='+Input61h.value));
+}
+function PostXML62() {
+var Input62h = document.getElementById('INPUT62h');
+PostXML('PAGE1.XML', encodeURIComponent(Input62h.name+'='+Input62h.value));
+}
+function PostXML63() {
+var Input63h = document.getElementById('INPUT63h');
+PostXML('PAGE1.XML', encodeURIComponent(Input63h.name+'='+Input63h.value));
 }
 
 function PostGlobal() {

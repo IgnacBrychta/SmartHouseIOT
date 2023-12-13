@@ -278,5 +278,5 @@ CH3_log=3
 CH4_log=4
 
 [PanelSIM]
-ActiveSetupPanelSim1=OI1073_VideoRam;OI1073_SimKey;3;1;3;-1;;;;;;;80;5;0;2;0;0;100;260;0;0;1
+ActiveSetupPanelSim1=OI1073_VideoRam;OI1073_SimKey;3;1;3;1188;;;;;;;80;5;0;0;0;0;100;260;0;0;1
 

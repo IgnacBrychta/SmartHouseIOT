@@ -10,7 +10,8 @@
 #srcline 1 ;FUNCTION HandleSecurity : BOOL
 
 #struct HandleSecurity__temp__
-  string[82] PS0__st__
+  string[82] PS0__st__,
+  string[82] PSC__st__
 P     61
 HandleSecurity_L0:
  LINK __SizeOf(HandleSecurity__temp__)
@@ -77,70 +78,142 @@ HandleSecurity_L4:
  PDST   ; Level 1
 #srcline 21 ;  END_IF;
 HandleSecurity_L1:
-#srcline 22 ;  
-#srcline 23 ;  IF canOpenOutsideDoors THEN
+#srcline 23 ;  IF NOT enteredPassKeyINT = enteredPassKeyINTdefaultValue THEN
+ LD   enteredPassKeyINT
+#debug int enteredPassKeyINT
+ EXTW 
+ LD   enteredPassKeyINTdefaultValue
+#debug int enteredPassKeyINTdefaultValue
+ EXTW 
+ EQ
+ NEG
+ JMC  HandleSecurity_L5
+#srcline 24 ;    IF INT_TO_STRING(enteredPassKeyINT) = MASTER_PASSKEY THEN
+ LD   0   ; null string
+ WRY  PSC__st__[0]
+ LEAY PSC__st__[0]
+ LD   -1
+ DST    ; Level 1
+ LD   enteredPassKeyINT
+#debug int enteredPassKeyINT
+ EXTW 
+ SCNV $0B30;  IEC_INT _TO_ IEC_STRING
+ PDST   ; Level 1
+ LEAY PSC__st__[0]
+ LEA  MASTER_PASSKEY
+#debug string MASTER_PASSKEY
+ SCMP 
+ EQ   0
+ JMC  HandleSecurity_L7
+#srcline 25 ;      canOpenOutsideDoors := TRUE;
+ LD   bool -1       ; true
+ WR   canOpenOutsideDoors
+#debug_left bool canOpenOutsideDoors
+#srcline 26 ;      alarmON := FALSE;
+ LD   bool 0       ; false
+ WR   alarmON
+#debug_left bool alarmON
+#srcline 27 ;      alarmTimerOFFsec := defaultAlarmTimerOFFsec;
+ LD   defaultAlarmTimerOFFsec
+#debug int defaultAlarmTimerOFFsec
+ EXTW 
+ WR   alarmTimerOFFsec
+#debug_left int alarmTimerOFFsec
+#srcline 28 ;    ELSE
+ JMP  HandleSecurity_L8
+HandleSecurity_L7:
+#srcline 29 ;      alarmON := TRUE;
+ LD   bool -1       ; true
+ WR   alarmON
+#debug_left bool alarmON
+#srcline 30 ;      canOpenOutsideDoors := FALSE;
+ LD   bool 0       ; false
+ WR   canOpenOutsideDoors
+#debug_left bool canOpenOutsideDoors
+#srcline 31 ;    END_IF;
+HandleSecurity_L8:
+#srcline 32 ;    enteredPassKey := passKeyDefaultValue;
+ LD   0   ; null string
+ LEA  enteredPassKey
+ WRI  
+ LEA  enteredPassKey
+ LD   80
+ DST    ; Level 1
+ LEA  passKeyDefaultValue
+#debug string passKeyDefaultValue
+ SCON 
+#debug_left string enteredPassKey
+ PDST   ; Level 1
+#srcline 33 ;    enteredPassKeyINT := 0;
+ LD   int 0
+ WR   enteredPassKeyINT
+#debug_left int enteredPassKeyINT
+#srcline 34 ;  END_IF;
+HandleSecurity_L5:
+#srcline 35 ;  
+#srcline 36 ;  IF canOpenOutsideDoors THEN
  LD   canOpenOutsideDoors
 #debug bool canOpenOutsideDoors
- JMC  HandleSecurity_L5
-#srcline 24 ;    garageGate := garageGateSwitch;
+ JMC  HandleSecurity_L9
+#srcline 37 ;    garageGate := garageGateSwitch;
  LD   garageGateSwitch
 #debug bool garageGateSwitch
  WR   garageGate
 #debug_left bool garageGate
-#srcline 25 ;    garageDoor := garageDoorSwitch;
+#srcline 38 ;    garageDoor := garageDoorSwitch;
  LD   garageDoorSwitch
 #debug bool garageDoorSwitch
  WR   garageDoor
 #debug_left bool garageDoor
-#srcline 26 ;    patioDoor  := patioDoorSwitch;
+#srcline 39 ;    patioDoor  := patioDoorSwitch;
  LD   patioDoorSwitch
 #debug bool patioDoorSwitch
  WR   patioDoor
 #debug_left bool patioDoor
-#srcline 27 ;    hallDoor   := frontDoorSwitch;
+#srcline 40 ;    hallDoor   := frontDoorSwitch;
  LD   frontDoorSwitch
 #debug bool frontDoorSwitch
  WR   hallDoor
 #debug_left bool hallDoor
-#srcline 28 ;  ELSE
- JMP  HandleSecurity_L6
-HandleSecurity_L5:
-#srcline 29 ;    garageGate := FALSE;
+#srcline 41 ;  ELSE
+ JMP  HandleSecurity_L10
+HandleSecurity_L9:
+#srcline 42 ;    garageGate := FALSE;
  LD   bool 0       ; false
  WR   garageGate
 #debug_left bool garageGate
-#srcline 30 ;    garageDoor := FALSE;
+#srcline 43 ;    garageDoor := FALSE;
  LD   bool 0       ; false
  WR   garageDoor
 #debug_left bool garageDoor
-#srcline 31 ;    patioDoor  := FALSE;
+#srcline 44 ;    patioDoor  := FALSE;
  LD   bool 0       ; false
  WR   patioDoor
 #debug_left bool patioDoor
-#srcline 32 ;    hallDoor   := FALSE;
+#srcline 45 ;    hallDoor   := FALSE;
  LD   bool 0       ; false
  WR   hallDoor
 #debug_left bool hallDoor
-#srcline 34 ;    garageGateSwitch := FALSE;
+#srcline 47 ;    garageGateSwitch := FALSE;
  LD   bool 0       ; false
  WR   garageGateSwitch
 #debug_left bool garageGateSwitch
-#srcline 35 ;    garageDoorSwitch := FALSE;
+#srcline 48 ;    garageDoorSwitch := FALSE;
  LD   bool 0       ; false
  WR   garageDoorSwitch
 #debug_left bool garageDoorSwitch
-#srcline 36 ;    patioDoorSwitch  := FALSE;
+#srcline 49 ;    patioDoorSwitch  := FALSE;
  LD   bool 0       ; false
  WR   patioDoorSwitch
 #debug_left bool patioDoorSwitch
-#srcline 37 ;    frontDoorSwitch  := FALSE;
+#srcline 50 ;    frontDoorSwitch  := FALSE;
  LD   bool 0       ; false
  WR   frontDoorSwitch
 #debug_left bool frontDoorSwitch
-#srcline 38 ;  END_IF;
-HandleSecurity_L6:
-#srcline 39 ;  
-#srcline 40 ;END_FUNCTION
+#srcline 51 ;  END_IF;
+HandleSecurity_L10:
+#srcline 52 ;  
+#srcline 53 ;END_FUNCTION
  PRV  
  LDX  __fc__HandleSecurity
  ULNK

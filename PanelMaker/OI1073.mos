@@ -1,1 +1,217 @@
-#ERROR W'PanelMaker tool has to be run'
+;*******************************************************************************
+;Warning
+;File is automatically regenerated and all manual changes will be lost.
+
+#ifndef _DeklarPT_
+  #error F'File DeklarPT.mos is not in project files list or is not above file OI1073.mos!'
+#endif
+
+
+#table byte OI1073_beginText_Table = 0
+#def   OI1073_beginText  __indx(OI1073_beginText_Table)
+#def   OI1073_Disp1_Table_Indx 	OI1073_beginText + 1	;Disp1
+
+
+#def   OI1073_START_Flow_Indx 	 OI1073_beginText + 2	;START
+#def   OI1073_Var1_Table_Indx_MinMax 	OI1073_beginText + 3
+#def   OI1073_Var2_Table_Indx_MinMax 	OI1073_beginText + 4
+#def   OI1073_LastTable_Index     OI1073_beginText + 5
+
+
+#reg word OI1073_NumTextPT
+#reg word OI1073_NumTextOldPT
+#reg bit  OI1073_NewText
+
+#ifndef CALL_TER14
+  #struct TIDStruct_PM
+          word _NumText,
+          word _MinText,
+          word _MaxText,
+          byte _EnableBits,
+          byte _SizeDisp,
+          byte _KeybTer,
+          byte _InterTer[128]
+
+  #def CALL_TER14     ter 14
+  #def CALL_TEROI1073 ter  7
+#endif
+
+#reg TIDStruct_PM OI1073
+#reg byte         OI1073_SIMKey
+#reg byte         OI1073_KeybPT
+#reg byte OI1073_InterPT
+
+#ifndef enteredPassKeyINT
+  #error F'enteredPassKeyINT ... Variable does not exist or is defined after a use! Display : Disp1'
+#endif
+#ifndef DESIRED_TEMPERATURE
+  #error F'DESIRED_TEMPERATURE ... Variable does not exist or is defined after a use! Display : Disp1'
+#endif
+
+#if _PLCTYPE_ < CP7001
+  #error F'Tables with definition for display use functions for higher series of PLC.'
+#endif
+
+#table _TTS_PM_D80_V2 OI1073_Disp1_Table_Indx, OI1073_Disp1_Table = 
+          1,14,80,2,
+            'Pass Key VVVV       ',
+            'Desired             ',
+            'Temp °C  VVV        ',
+            '                    ',
+	__offset(enteredPassKeyINT), __IECtypeID(enteredPassKeyINT),__sizeof(enteredPassKeyINT), __typeID(enteredPassKeyINT),9,readWrite + dispDec, 4 des 0, 0,
+	__offset(DESIRED_TEMPERATURE), __IECtypeID(DESIRED_TEMPERATURE),__sizeof(DESIRED_TEMPERATURE), __typeID(DESIRED_TEMPERATURE),49,readWrite + dispSignDec, 3 des 0, 0
+
+#table byte OI1073_START_Flow_Indx, OI1073_START_Flow = 
+            OI1073_Disp1_Table_Indx, (OI1073_Disp1_Table_Indx)/256,
+            OI1073_Disp1_Table_Indx, (OI1073_Disp1_Table_Indx)/256,
+            OI1073_Disp1_Table_Indx, (OI1073_Disp1_Table_Indx)/256,
+            enableList + enableEdit
+
+
+
+
+
+#table byte OI1073_LastTable_Index, OI1073_LastTable = 0
+
+#table  word OI1073_CKey = 
+        0
+
+#table word OI1073_UpKey = 
+        0
+
+#table word OI1073_DownKey = 
+        0
+
+P 60
+OI1073_init:
+  LD  80
+  WR  OI1073._SizeDisp
+  LD  OI1073_START_Flow_Indx
+  WR  OI1073._NumText
+
+  RET
+E 60
+
+P 63
+  CAL OI1073_init
+E 63
+
+P 62
+  CAL OI1073_init
+E 62
+
+#ifndef OI1073_UserKeyb
+  #reg byte OI1073_UserKeyb
+#endif
+P 0
+  LD  80
+  LD  OI1073._SizeDisp
+  EQ 
+  CAC OI1073_init
+  LD  OI1073_Keyb
+  EQ  0
+  JMD Receive_OI1073_SIMKey
+  LD  OI1073_Keyb
+  WR  OI1073_UserKeyb
+  WR  OI1073._KeybTer
+  WR  OI1073_KeybPT
+  JMP TerHandle_OI1073
+Receive_OI1073_SIMKey:
+  LD  OI1073_SIMKey
+  EQ  0
+  JMD EndReceive_OI1073_SIMKey
+  LD  OI1073_SIMKey
+  WR  OI1073._KeybTer
+  WR  OI1073_UserKeyb
+  WR  OI1073_KeybPT
+  RES OI1073_SIMKey
+EndReceive_OI1073_SIMKey:
+
+TerHandle_OI1073:
+  LD  __indx(OI1073._NumText)
+  LD  __indx(OI1073_VideoRam)
+  CALL_TEROI1073
+  LD  OI1073_NumTextPT
+  LD  OI1073_NumTextOldPT
+  EQ
+  WRC OI1073_NewText
+  LD  OI1073_NumTextPT
+  WR  OI1073_NumTextOldPT
+
+  ;if variable edit, block move witk keyb UP, Down and C
+  LD  OI1073._InterTer
+  GT  2
+  LD  OI1073._InterTer
+  EQ  7
+  NEG
+  AND
+  JMD OI1073_KeybBlock
+  #ifdef OI1073_DownKey
+    LD  OI1073_KeybPT
+    EQ  $19
+    JMC OI1073_EndDown
+    LD  OI1073._NumText
+    EQ  OI1073_NumTextPT
+    JMC OI1073_EndDown
+    LD  OI1073._NumText
+    LD  OI1073_beginText+1
+    SUB
+    LTB OI1073_DownKey
+    JMC OI1073_EndDown
+    WR  OI1073._NumText
+  #endif
+OI1073_EndDown:
+
+  #ifdef OI1073_UpKey
+    LD  OI1073_KeybPT
+    EQ  $18
+    JMC OI1073_EndUp
+    LD  OI1073._NumText
+    EQ  OI1073_NumTextPT
+    JMC OI1073_EndUp
+    LD  OI1073._NumText
+    LD  OI1073_beginText+1
+    SUB
+    LTB OI1073_UpKey
+    JMC OI1073_EndUp
+    WR  OI1073._NumText
+  #endif
+OI1073_EndUp:
+
+  #ifdef OI1073_CKey
+    LD  OI1073_KeybPT
+    EQ  $7F
+    LD  OI1073_InterPT
+    EQ  0
+    LD  OI1073_InterPT
+    EQ  7
+    OR
+    AND
+    JMC OI1073_KonecC
+    LD  OI1073._NumText
+    LD  OI1073_beginText+1
+    SUB
+    LTB OI1073_CKey
+    JMC OI1073_KonecC
+    WR  OI1073._NumText
+  #endif
+OI1073_KonecC:
+OI1073_KeybBlock:
+
+
+
+
+  LD  0
+  WR  OI1073_KeybPT
+  LD  OI1073._InterTer
+  WR  OI1073_InterPT
+  LD  OI1073._NumText
+  WR  OI1073_NumTextPT
+E 0
+
+
+;*******************************************************************************
+;Last changes : 13/12/2023 12:15:37
+;Generated by MOSAIC
+;© 2001-2019 Teco a.s.
+;Version : 1.4

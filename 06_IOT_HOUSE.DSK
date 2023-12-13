@@ -3,10 +3,10 @@ Version="xPRO","4.3.00"
 [/desktop]
 
 [dockinfo]
-centralpc=54260712,0,0,1
-leftpane=54252192,0,1,1,167,1
-bottompane=54259428,1,55
-rightpane=54253768,0,167,1
+centralpc=54022664,1,0,0
+leftpane=54054360,0,1,1,167,1
+bottompane=54061596,1,55
+rightpane=54055936,0,167,1
 [/dockinfo]
 
 [closedtextpaneleditors]
@@ -109,15 +109,15 @@ nodeplus="PlcHw"
 [/prjmngr]
 
 [msgwin2]
-window=54259428,1,0,0,25,1101,39,651,25,850,0,0,1
+window=54061596,1,0,0,25,1101,39,651,25,850,0,0,1
 [/msgwin2]
 
 [msgwin1]
-window=54259428,1,0,0,25,1101,39,651,25,850,0,0,0
+window=54061596,1,0,0,25,1101,39,651,25,850,0,0,0
 [/msgwin1]
 
 [breakswin]
-window=54259428,1,0,0,25,1101,39,651,25,850,0,0,2
+window=54061596,1,0,0,25,1101,39,651,25,850,0,0,2
 hdrwidth0=200
 hdrwidth1=30
 hdrwidth2=80
@@ -155,7 +155,7 @@ font="Courier New",1,0,10,-13,-2147483640,0,0
 [/memwin2]
 
 [watch2win]
-window=54259428,1,0,0,25,1101,39,651,25,850,0,0,3
+window=54061596,1,0,0,25,1101,39,651,25,850,0,0,3
 hdrnamew=240,60,0
 font="Courier New",10
 hiresreadability=0
@@ -172,7 +172,7 @@ mem2visible=0
 [/watch2win]
 
 [weblc]
-lastfile="NONAME1.txt"
+lastfile=""
 listwidth=121
 findhistory=""
 replacehistory=""
@@ -183,17 +183,17 @@ window=0,0,54,54,516,960,336,260,516,960,0,0,-1
 [/evalmodifdlg]
 
 [paneltexted]
-editor="XClip-Panel",1,0,1,1,1,1,5120158,1694128,108247680,1694520,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+editor="XClip-Panel",1,0,1,1,1,1,5095806,1701168,197311392,1701560,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 window=0,0,0,94,313,483,313,463,313,483,0,0,-1
 font="Lucida Console",11
 [/paneltexted]
 
 [ctrlswin]
-window=54252192,1,0,0,646,159,676,42,676,159,0,0,0
+window=54054360,1,0,0,646,159,676,42,676,159,0,0,0
 [/ctrlswin]
 
 [prjfileswin]
-window=54252192,1,0,0,646,159,676,100,676,159,0,0,1
+window=54054360,1,0,0,646,159,676,100,676,159,0,0,1
 filesheight=409
 relatedheight=160
 relatedcnt=3
@@ -203,14 +203,18 @@ relfile2="SendRoot\TecoApi.pub"
 [/prjfileswin]
 
 [Datalogger]
-window=54260712,0,0,0,487,1101,187,259,517,1109,0,0,0
+window=54022664,0,0,0,487,1101,187,259,517,1109,0,0,0
 [/Datalogger]
 
 [CFC_Editors]
 [/CFC_Editors]
 
+[PM_OI1073]
+window=54022664,1,0,0,587,1101,587,1101,776,1296,0,0,7
+[/PM_OI1073]
+
 [PanelSIM_1]
-window=0,0,0,0,196,352,519,257,519,392,0,0,-1
+window=0,1,868,304,196,352,519,257,519,392,0,0,-1
 [/PanelSIM_1]
 
 [FormRegMngr1]
@@ -220,7 +224,7 @@ window=0,0,695,273,317,233,317,233,317,233,0,0,-1
 [PlcNetManager]
 SortItems=1
 SortPlcs=1
-window=54252192,0,0,0,646,159,676,167,676,159,0,0,4
+window=54054360,0,0,0,646,159,676,167,676,159,0,0,4
 [/PlcNetManager]
 
 [SelectPLC]
@@ -228,76 +232,76 @@ IOSetupColW="188,190,72,72,72,72,64,140,"
 [/SelectPLC]
 
 [FormDesign1]
-window=54260712,1,0,0,587,1101,676,1280,517,1109,0,0,3
+window=54022664,1,0,0,587,1101,676,1280,517,1109,0,0,3
 [/FormDesign1]
 
 [textsyneditor]
-editor="prgMain.ST",1,0,0,47,41,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,676,1280,676,1109,0,0,1
+editor="prgMain.ST",1,1,0,47,41,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+window=54022664,1,0,0,587,1101,676,1280,676,1109,0,0,1
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 
 [textsyneditor]
-editor="06_IOT_HOUSE.ST",1,0,0,83,56,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,676,1280,676,1109,0,0,2
+editor="06_IOT_HOUSE.ST",1,0,0,64,142,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+window=54022664,1,0,0,587,1101,676,1280,676,1109,0,0,2
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 
 [textsyneditor]
-editor="HandleLights.ST",1,0,0,46,39,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,617,1109,617,1109,0,0,4
+editor="HandleLights.ST",1,0,0,25,90,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+window=54022664,1,0,0,587,1101,676,1280,617,1109,0,0,4
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 
 [textsyneditor]
 editor="HandleDayNightCycle.ST",1,0,0,1,29,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,617,1109,617,1109,0,0,5
+window=54022664,1,0,0,587,1101,676,1280,617,1109,0,0,5
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 
 [textsyneditor]
 editor="PRNG.ST",1,0,0,12,37,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,617,1109,617,1109,0,0,6
+window=54022664,1,0,0,587,1101,676,1280,617,1109,0,0,6
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 
 [textsyneditor]
 editor="HandleTemperature.ST",1,0,0,18,44,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,617,1109,617,1109,0,0,7
+window=54022664,1,0,0,587,1101,676,1280,617,1109,0,0,8
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 
 [textsyneditor]
-editor="HandleSecurity.ST",1,0,0,24,17,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
-window=54260712,1,0,0,587,1101,617,1109,617,1109,0,0,8
+editor="HandleSecurity.ST",1,0,0,33,5,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+window=54022664,1,0,0,587,1101,676,1280,617,1109,0,0,9
 localparams=0,1,1,1,1,30,0,80,1,2,1,0,0
 font="Courier New",10
 relay=0,0,0,0,0,"",0,0
-inspectorctx=""
+inspectorctx="Main"
 debugparams=1,0,1
 [/textsyneditor]
 

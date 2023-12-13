@@ -22,35 +22,35 @@
 	<Item Name="wcDoor" Pos="03000057" Type="4" />
 	<Item Name="bathroomDoor" Pos="03000057" Type="3" />
 	<Item Name="garageGate" Pos="03000057" Type="2" />
-	<Item Name="heating" Pos="030001F6" Type="0" />
-	<Item Name="childTopRoomLightSwitch" Pos="030001FF" Type="4" />
-	<Item Name="garageLightSwitch" Pos="030001FF" Type="5" />
-	<Item Name="masterLightSwitchON" Pos="030001FF" Type="1" />
-	<Item Name="masterLightSwitchOFF" Pos="030001FF" Type="2" />
-	<Item Name="bedroomLightSwitch" Pos="030001FF" Type="3" />
-	<Item Name="childMiddleRoomLightSwitch" Pos="030001FF" Type="6" />
-	<Item Name="bathroomLightSwitch" Pos="030001FF" Type="7" />
-	<Item Name="hallLightSwitch" Pos="03000200" Type="0" />
-	<Item Name="wcLightSwitch" Pos="03000200" Type="1" />
-	<Item Name="patioLightSwitch" Pos="03000200" Type="3" />
-	<Item Name="cellarLightSwitch" Pos="03000200" Type="6" />
-	<Item Name="kitchenLightSwitch" Pos="03000200" Type="2" />
-	<Item Name="livingRoomLightSwitch" Pos="03000200" Type="4" />
-	<Item Name="outsideLightSwitch" Pos="03000200" Type="5" />
+	<Item Name="heating" Pos="030001FA" Type="0" />
+	<Item Name="masterLightSwitchON" Pos="03000203" Type="1" />
+	<Item Name="masterLightSwitchOFF" Pos="03000203" Type="2" />
+	<Item Name="outsideLightSwitch" Pos="03000204" Type="5" />
 	<Item Name="insideTemperatureText" Pos="03000058" Type="48" />
 	<Item Name="outsideTemperatureText" Pos="030000A9" Type="48" />
-	<Item Name="cooling" Pos="030001FF" Type="0" />
-	<Item Name="textAllON" Pos="0300020B" Type="48" />
-	<Item Name="textAllOFF" Pos="0300025C" Type="48" />
-	<Item Name="textOutsideLights" Pos="030002AD" Type="48" />
+	<Item Name="cooling" Pos="03000203" Type="0" />
+	<Item Name="textAllON" Pos="0300020F" Type="48" />
+	<Item Name="textAllOFF" Pos="03000260" Type="48" />
+	<Item Name="textOutsideLights" Pos="030002B1" Type="48" />
 	<Item Name="enteredPassKey" Pos="0300014B" Type="48" />
-	<Item Name="alarmBlink" Pos="0300019C" Type="2" />
-	<Item Name="canOpenOutsideDoors" Pos="0300019C" Type="0" />
-	<Item Name="textPassKey" Pos="030002FE" Type="48" />
-	<Item Name="garageDoorSwitch" Pos="03000201" Type="0" />
-	<Item Name="garageGateSwitch" Pos="03000200" Type="7" />
-	<Item Name="frontDoorSwitch" Pos="03000201" Type="1" />
-	<Item Name="patioDoorSwitch" Pos="03000201" Type="2" />
-	<Item Name="textLights" Pos="0300034F" Type="48" />
-	<Item Name="textSecuritySystem" Pos="030003A0" Type="48" />
+	<Item Name="alarmBlink" Pos="030001A0" Type="2" />
+	<Item Name="canOpenOutsideDoors" Pos="030001A0" Type="0" />
+	<Item Name="textPassKey" Pos="03000302" Type="48" />
+	<Item Name="garageDoorSwitch" Pos="03000205" Type="0" />
+	<Item Name="garageGateSwitch" Pos="03000204" Type="7" />
+	<Item Name="frontDoorSwitch" Pos="03000205" Type="1" />
+	<Item Name="patioDoorSwitch" Pos="03000205" Type="2" />
+	<Item Name="textLights" Pos="03000353" Type="48" />
+	<Item Name="textSecuritySystem" Pos="030003A4" Type="48" />
+	<Item Name="patioLightSwitch" Pos="03000204" Type="3" />
+	<Item Name="kitchenLightSwitch" Pos="03000204" Type="2" />
+	<Item Name="wcLightSwitch" Pos="03000204" Type="1" />
+	<Item Name="hallLightSwitch" Pos="03000204" Type="0" />
+	<Item Name="bathroomLightSwitch" Pos="03000203" Type="7" />
+	<Item Name="garageLightSwitch" Pos="03000203" Type="5" />
+	<Item Name="childTopRoomLightSwitch" Pos="03000203" Type="4" />
+	<Item Name="bedroomLightSwitch" Pos="03000203" Type="3" />
+	<Item Name="childMiddleRoomLightSwitch" Pos="03000203" Type="6" />
+	<Item Name="cellarLightSwitch" Pos="03000204" Type="6" />
+	<Item Name="livingRoomLightSwitch" Pos="03000204" Type="4" />
 </Variables>

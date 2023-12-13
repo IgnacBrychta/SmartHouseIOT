@@ -37,6 +37,8 @@ VAR_GLOBAL
   MASTER_PASSKEY : STRING := '1234';
   // security
   enteredPassKey : STRING := '';
+  enteredPassKeyINT : INT := 0;
+  enteredPassKeyINTdefaultValue : INT := 0;
   canOpenOutsideDoors : BOOL := FALSE;
   alarmON : BOOL := FALSE;
   alarmBlink : BOOl := FALSE;

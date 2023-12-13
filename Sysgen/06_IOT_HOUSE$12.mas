@@ -32,6 +32,8 @@
 #reg  string outsideTemperatureText[81]
 #reg  string MASTER_PASSKEY[81]
 #reg  string enteredPassKey[81]
+#reg  int enteredPassKeyINT
+#reg  int enteredPassKeyINTdefaultValue
 #reg  bool canOpenOutsideDoors
 #reg  bool alarmON
 #reg  bool alarmBlink
@@ -176,6 +178,10 @@ P     58
  LD   0
  LD   81
  MOV  byte enteredPassKey
+ LD   int 0
+ WR   enteredPassKeyINT
+ LD   int 0
+ WR   enteredPassKeyINTdefaultValue
  LD   bool 0   ; false
  WR   canOpenOutsideDoors
  LD   bool 0   ; false

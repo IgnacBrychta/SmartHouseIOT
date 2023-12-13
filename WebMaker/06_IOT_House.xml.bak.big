@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="windows-1250" ?>
-<web version="8.1" propfont="true" foot="© 2007 - 2020 Teco a.s." dwMode="1" MaxUid="2701">
+<web version="8.1" propfont="true" foot="© 2007 - 2020 Teco a.s." dwMode="1" MaxUid="2705">
 	<panels></panels>
 	<Grid Enable="1" X="5" Y="5" />
 	<globalset newdim="1" />
 	<group caption="" Uid="2628">
-		<page caption="Index" name="PAGE1.XML" ajax="true" pause="1000" default="true" Uid="2627" ucid="1702313369" width="895" height="1080">
+		<page caption="Index" name="PAGE1.XML" ajax="true" pause="1000" default="true" Uid="2627" ucid="1702374517" width="1165" height="609">
 			<object caption="" X="-19" Y="-2" xoff="0" yoff="-6" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2630">
 				<picture href="" img="TRAVA2.JPG" />
 			</object>
-			<object caption="" X="75" Y="36" xoff="3" yoff="0" level="0" readonly="false" front="0" back="15790320" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2697">
-				<block width="300" height="800" border="true" />
+			<object caption="" X="101" Y="1" xoff="0" yoff="0" level="0" readonly="false" front="0" back="15790320" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2697">
+				<block width="300" height="600" border="true" />
 			</object>
 			<object caption="" X="22" Y="1" xoff="2" yoff="0" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2629">
 				<picture href="" img="BACKGR_1.PNG" />
@@ -53,28 +53,28 @@
 			<object caption="" X="47" Y="5" xoff="7" yoff="3" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2643">
 				<image optcap="" variable="childTopRoomLight" type="BOOL" on="SVETLO1.PNG" off="SVETLO0.PNG" />
 			</object>
-			<object caption="" X="15" Y="4" xoff="3" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2644">
+			<object caption="" X="12" Y="2" xoff="2" yoff="7" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2644">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="8" Y="12" xoff="4" yoff="7" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2645">
+			<object caption="" X="11" Y="25" xoff="5" yoff="3" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2645">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="45" Y="54" xoff="3" yoff="1" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2646">
+			<object caption="" X="56" Y="59" xoff="5" yoff="1" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2646">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="24" Y="54" xoff="1" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2647">
+			<object caption="" X="11" Y="41" xoff="5" yoff="0" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2647">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="57" Y="57" xoff="7" yoff="2" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2648">
+			<object caption="" X="77" Y="56" xoff="2" yoff="0" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2648">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="67" Y="57" xoff="2" yoff="2" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2649">
+			<object caption="" X="78" Y="41" xoff="4" yoff="0" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2649">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="82" Y="14" xoff="7" yoff="1" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2650">
+			<object caption="" X="89" Y="9" xoff="1" yoff="1" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2650">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
-			<object caption="" X="92" Y="14" xoff="2" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2651">
+			<object caption="" X="86" Y="27" xoff="0" yoff="7" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2651">
 				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
 			<object caption="" X="37" Y="17" xoff="7" yoff="7" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2652">
@@ -113,80 +113,44 @@
 			<object caption="" X="26" Y="4" xoff="0" yoff="1" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2664">
 				<image optcap="" variable="heating" type="BOOL" on="RADIAT_2.PNG" off="RADIAT_1.PNG" />
 			</object>
-			<object caption="" X="84" Y="34" xoff="6" yoff="6" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2665">
-				<image optcap="" variable="childTopRoomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="92" Y="34" xoff="7" yoff="6" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2666">
-				<image optcap="" variable="garageLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="1" Y="19" xoff="5" yoff="6" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2667">
+			<object caption="" X="101" Y="30" xoff="0" yoff="3" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2667">
 				<image optcap="" variable="masterLightSwitchON" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
 			</object>
-			<object caption="" X="1" Y="26" xoff="5" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2668">
+			<object caption="" X="118" Y="30" xoff="4" yoff="3" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2668">
 				<image optcap="" variable="masterLightSwitchOFF" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
 			</object>
-			<object caption="" X="76" Y="34" xoff="5" yoff="6" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2669">
-				<image optcap="" variable="bedroomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="76" Y="41" xoff="5" yoff="0" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2670">
-				<image optcap="" variable="childMiddleRoomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="92" Y="41" xoff="7" yoff="0" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2671">
-				<image optcap="" variable="bathroomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="92" Y="46" xoff="7" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2672">
-				<image optcap="" variable="hallLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="92" Y="52" xoff="7" yoff="7" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2673">
-				<image optcap="" variable="wcLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="76" Y="58" xoff="5" yoff="4" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2674">
-				<image optcap="" variable="patioLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="84" Y="41" xoff="6" yoff="0" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2675">
-				<image optcap="" variable="cellarLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="92" Y="58" xoff="7" yoff="4" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2676">
-				<image optcap="" variable="kitchenLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="84" Y="53" xoff="1" yoff="4" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2677">
-				<image optcap="" variable="livingRoomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
-			</object>
-			<object caption="" X="1" Y="32" xoff="5" yoff="7" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2678">
+			<object caption="" X="109" Y="69" xoff="1" yoff="1" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2678">
 				<image optcap="" variable="outsideLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
 			</object>
 			<object caption="" X="38" Y="32" xoff="4" yoff="2" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2679">
-				<edit variable="insideTemperatureText" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="64" height="22" tabindex="1" />
+				<edit variable="insideTemperatureText" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="58" height="22" tabindex="1" />
 			</object>
 			<object caption="" X="2" Y="8" xoff="2" yoff="4" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2680">
-				<edit variable="outsideTemperatureText" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="64" height="22" tabindex="8" />
+				<edit variable="outsideTemperatureText" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="58" height="22" tabindex="8" />
 			</object>
 			<object caption="" X="17" Y="13" xoff="7" yoff="4" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2681">
 				<image optcap="" variable="cooling" type="BOOL" on="KLIMAT_2.PNG" off="KLIMAT_1.PNG" />
 			</object>
-			<object caption="" X="10" Y="22" xoff="3" yoff="2" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2683">
-				<edit variable="textAllON" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="64" height="22" tabindex="7" />
+			<object caption="" X="109" Y="32" xoff="6" yoff="7" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2683">
+				<edit variable="textAllON" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="58" height="22" tabindex="7" />
 			</object>
-			<object caption="" X="10" Y="28" xoff="3" yoff="4" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2684">
-				<edit variable="textAllOFF" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="64" height="22" tabindex="2" />
+			<object caption="" X="128" Y="32" xoff="4" yoff="7" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2684">
+				<edit variable="textAllOFF" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="6" global="true" border="true" width="58" height="22" tabindex="2" />
 			</object>
-			<object caption="" X="10" Y="34" xoff="3" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2685">
-				<edit variable="textOutsideLights" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="12" global="true" border="true" width="118" height="22" tabindex="4" />
+			<object caption="" X="119" Y="71" xoff="1" yoff="5" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2685">
+				<edit variable="textOutsideLights" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="12" global="true" border="true" width="106" height="22" tabindex="4" />
 			</object>
-			<object caption="" X="-27" Y="39" xoff="-6" yoff="6" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2691">
-				<picture href="" img="ZAMEKP_1.PNG" />
+			<object caption="" X="117" Y="7" xoff="2" yoff="7" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2686">
+				<edit variable="enteredPassKey" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="3" global="false" border="true" width="34" height="22" tabindex="9" />
 			</object>
-			<object caption="" X="6" Y="46" xoff="0" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2686">
-				<edit variable="enteredPassKey" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="3" global="false" border="true" width="37" height="22" tabindex="9" />
-			</object>
-			<object caption="" X="87" Y="1" xoff="2" yoff="5" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2687">
+			<object caption="" X="101" Y="14" xoff="0" yoff="1" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2687">
 				<image optcap="" variable="alarmBlink" type="BOOL" on="ALARM1.PNG" off="ALARM0.PNG" />
 			</object>
-			<object caption="" X="2" Y="50" xoff="2" yoff="3" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2689">
+			<object caption="" X="112" Y="11" xoff="2" yoff="5" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2689">
 				<image optcap="" variable="canOpenOutsideDoors" type="BOOL" on="ZAMEK1.PNG" off="ZAMEK0.PNG" />
 			</object>
-			<object caption="" X="4" Y="43" xoff="1" yoff="4" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2690">
-				<edit variable="textPassKey" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="8" global="true" border="true" width="82" height="22" tabindex="3" />
+			<object caption="" X="116" Y="4" xoff="0" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2690">
+				<edit variable="textPassKey" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="8" global="true" border="true" width="74" height="22" tabindex="3" />
 			</object>
 			<object caption="" X="77" Y="20" xoff="7" yoff="3" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2692">
 				<image optcap="" variable="garageDoorSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
@@ -200,11 +164,56 @@
 			<object caption="" X="36" Y="46" xoff="5" yoff="0" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2695">
 				<image optcap="" variable="patioDoorSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
 			</object>
-			<object caption="" X="84" Y="31" xoff="6" yoff="5" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2698">
-				<edit variable="textLights" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="14" global="true" border="true" width="136" height="22" tabindex="5" />
+			<object caption="" X="113" Y="28" xoff="4" yoff="4" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2698">
+				<edit variable="textLights" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="14" global="true" border="true" width="122" height="22" tabindex="5" />
 			</object>
-			<object caption="" X="1" Y="39" xoff="5" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2700">
-				<edit variable="textSecuritySystem" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="16" global="true" border="true" width="154" height="22" tabindex="6" />
+			<object caption="" X="111" Y="1" xoff="5" yoff="5" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="false" visneg="false" Uid="2700">
+				<edit variable="textSecuritySystem" type="STRING" intf="0" timf="" align="left" zero="false" prec="-1" size="16" global="true" border="true" width="138" height="22" tabindex="6" />
+			</object>
+			<object caption="" X="96" Y="36" xoff="5" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2701">
+				<picture href="" img="BACKGR_2.PNG" />
+			</object>
+			<object caption="" X="113" Y="61" xoff="4" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2674">
+				<image optcap="" variable="patioLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="123" Y="58" xoff="4" yoff="4" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2676">
+				<image optcap="" variable="kitchenLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="124" Y="51" xoff="6" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2673">
+				<image optcap="" variable="wcLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="124" Y="47" xoff="6" yoff="7" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2672">
+				<image optcap="" variable="hallLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="124" Y="43" xoff="1" yoff="4" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2671">
+				<image optcap="" variable="bathroomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="127" Y="37" xoff="2" yoff="2" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2666">
+				<image optcap="" variable="garageLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="117" Y="36" xoff="2" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2665">
+				<image optcap="" variable="childTopRoomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="107" Y="37" xoff="7" yoff="2" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2669">
+				<image optcap="" variable="bedroomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="107" Y="44" xoff="7" yoff="1" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2670">
+				<image optcap="" variable="childMiddleRoomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="117" Y="51" xoff="2" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2675">
+				<image optcap="" variable="cellarLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="108" Y="51" xoff="4" yoff="5" level="0" readonly="false" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2677">
+				<image optcap="" variable="livingRoomLightSwitch" type="BOOL" on="SPINAC1.PNG" off="SPINAC0.PNG" />
+			</object>
+			<object caption="" X="126" Y="14" xoff="5" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2702">
+				<image optcap="" variable="alarmBlink" type="BOOL" on="ALARM1.PNG" off="ALARM0.PNG" />
+			</object>
+			<object caption="" X="36" Y="59" xoff="0" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2703">
+				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
+			</object>
+			<object caption="" X="12" Y="59" xoff="2" yoff="6" level="0" readonly="true" front="0" back="16777215" strong="false" italic="false" size="13" transparent="true" visneg="false" Uid="2704">
+				<image optcap="" variable="outsideLight" type="BOOL" on="ZAROVKA1.PNG" off="ZAROVKA0.PNG" />
 			</object>
 		</page>
 	</group>
@@ -233,6 +242,7 @@
 		<img name="ZAMEK0.PNG" type="PNG" height="128" width="128" longname="Zamek0" />
 		<img name="ZAMEKP_1.PNG" type="PNG" height="250" width="156" longname="zamek pozadi" />
 		<img name="SVETLA_1.PNG" type="PNG" height="512" width="409" longname="svetla pozadi" />
+		<img name="BACKGR_2.PNG" type="PNG" height="250" width="400" longname="background smaller" />
 	</images>
 	<Languages>
 		<Language Code="5" Editor="1" />

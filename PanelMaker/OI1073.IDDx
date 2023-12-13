@@ -1,0 +1,26 @@
+[GLOBAL]
+Row=4
+Col=20
+GroupCount=1
+ReadOnly=0
+[Group0]
+GroupName=START
+Activate=0
+Enabled=3
+ESCPanelName=
+StartPanelName=
+EndPanelName=
+PanelCount=1
+0=Disp1
+[Disp1]
+Row=4
+Col=20
+Text="Pass Key            Desired             Temp °C                                 "
+SpecActive=0
+SpecActiveVariable=
+DispActiveVariable=
+DispEditVariable=
+DispEditControlVariable=
+VarMenuMsgCount=2
+0=Var1,enteredPassKeyINT,1,9,0,4,3,0,0.000000,0.000000,0,0,0
+1=Var2,DESIRED_TEMPERATURE,1,9,2,3,1,0,0.000000,0.000000,0,0,0

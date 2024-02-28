@@ -46,6 +46,7 @@
 - **Visual Alert System:**
   - Incorporates a blinking alarm system to visually indicate specific conditions.
   - Enhances user awareness of critical events, such as security alarms.
+    
 
 ### Summary
 
